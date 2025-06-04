@@ -1,64 +1,20 @@
-# [Astro](https://astro.build) Blog Template
+# 👋 Hello World – A VR Dev Journey
 
-[![Screenshot](screenshot.png)](https://astro-blog-template.netlify.app/)
+Welcome to **Hello World**, a personal blog and development log where I explore the process of building a **Virtual Reality (VR) experience** from the ground up.
 
-## 👉 Check out the ✨ [Live Demo](https://astro-blog-template.netlify.app/) ✨
+## 🎯 What's This Blog About?
 
-## 👩‍🚀 Getting Started
+This space is dedicated to documenting my journey into the world of VR—experimenting with new technologies, reflecting on creative and technical decisions, and sharing lessons learned along the way. It's part of a self-driven project that encourages curiosity, autonomy, and deep exploration.
 
-### Locally
+Whether you're into immersive tech, curious about design in 3D space, or just want to follow along with the ups and downs of solo development, you're in the right place.
 
-```
-npm init astro -- --template Charca/astro-blog-template
-```
+## 🧭 Topics You Can Expect
 
-### On StackBlitz
+- Behind-the-scenes of building a VR prototype  
+- Reflections on learning new frameworks and tools  
+- Design challenges and creative problem-solving  
+- Technical deep dives and how-tos  
+- Honest logs of wins, failures, and pivots  
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/charca/astro-blog-template)
-
-## ✨ Features:
-
-- ✅ Astro 4.0
-- ✅ Dark Mode
-- ✅ Full Markdown support
-- ✅ SEO-friendly setup with canonical URLs and OpenGraph data
-- ✅ RSS 2.0 generation
-- ✅ Sitemap.xml generation
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```
-/
-├── public/
-│   ├── robots.txt
-│   └── favicon.ico
-├── src/
-│   ├── components/
-│   │   └── Tour.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command           | Action                                       |
-| :---------------- | :------------------------------------------- |
-| `npm install`     | Installs dependencies                        |
-| `npm run dev`     | Starts local dev server at `localhost:3030`  |
-| `npm run build`   | Build your production site to `./dist/`      |
-| `npm run preview` | Preview your build locally, before deploying |
-
-## 👀 Want to learn more?
-
-Feel free to check [Astro's documentation](https://github.com/withastro/astro) or jump into Astro's [Discord server](https://astro.build/chat).
+🟢 **Live Blog:** [frederikdg.github.io](https://frederikdg.github.io)  
+📁 **Source Code:** [github.com/FrederikDG/VRAI](https://github.com/FrederikDG/VRAI)
