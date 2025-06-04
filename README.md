@@ -16,8 +16,5 @@ Whether you're into immersive tech, curious about design in 3D space, or just wa
 - Technical deep dives and how-tos  
 - Honest logs of wins, failures, and pivots  
 
-## 📬 Stay Tuned
-
-This repo will host source code, dev logs, and project files. The blog will serve as the narrative thread tying everything together.
-
-Follow along, give feedback, or just lurk quietly—I'm glad you're here.
+🟢 **Live Blog:** [frederikdg.github.io](https://frederikdg.github.io)  
+📁 **Source Code:** [github.com/FrederikDG/VRAI](https://github.com/FrederikDG/VRAI)
