@@ -2,7 +2,7 @@
 title: Hello World 👋
 slug: hello-world
 publishDate: 02 june 2025
-description: A personal journey into developing a Virtual Reality experience—exploring new technologies, documenting my process, and sharing insights along the way.
+description: Exploring VR development through a personal project.
 ---
 
 ## About My Project: Creating a VR Experience

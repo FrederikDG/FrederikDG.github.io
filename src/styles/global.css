@@ -7,7 +7,7 @@
 }
 
 :root.theme-dark {
-  --background-body: #202122;
+  --background-body: #000;
   --text-main: #fff;
   --text-secondary: #ccc;
   --primary-color: #ff5a2a;
