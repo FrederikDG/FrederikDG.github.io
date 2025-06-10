@@ -17,4 +17,4 @@ Whether you're into immersive tech, curious about design in 3D space, or just wa
 - Honest logs of wins, failures, and pivots  
 
 🟢 **Live Blog:** [frederikdg.github.io](https://frederikdg.github.io)  
-📁 **Source Code:** [github.com/FrederikDG/VRAI](https://github.com/FrederikDG/VRAI)
+📁 **Source Code:** [github.com/FrederikDG/VIRTUAL-INSANITY](https://github.com/FrederikDG/VIRTUAL-INSANITY)
