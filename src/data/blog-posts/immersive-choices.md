@@ -1,16 +1,38 @@
 ---
-title: Immersive choices
-slug: immersive-choices
-publishDate: 05 june 2025
-description: Immersive choices in 2025
+title: Immersive choices  
+slug: immersive-choices  
+publishDate: 06 june 2025  
+description: Immersive choices in 2025  
 ---
 
-So the second thing that we have to think about is how we can actually make this a feasable project and how I'm going to approach it. There are multiple ways of coding a VR experience and also multiple brands and types of VR headsets. With the main market leaders being the meta quest 3 and the flopped vision pro from apple.
+![Meta Quest 3 vs Vision Pro](https://photos5.appleinsider.com/gallery/58323-119298-Quest-3-and-Vision-Pro-xl.jpg)  
 
-I have the luck of already owning a meta quest 3 since last year and loved playing games and watching movies on it. So that already gives that an edge as I dont have to worry about availability or lending, etc.
+Alright, so the second thing I had to think about was: how do I actually make this whole idea *happen*? As in, how do I turn this into something real and working, not just a vague "I want to make VR" thought floating in my notes app?, 
+There’s a bunch of ways to approach building a VR experience. And not just on the software side. There’s a whole jungle of headsets out there too. But right now, the biggest names are still the **Meta Quest 3** and the (let’s be real) kinda flopped **Apple Vision Pro**.
 
-Now the vision pro offers higher quality content which could also be interesting.
+Lucky for me, I already have a Meta Quest 3. Got it last year, been using it for gaming, watching movies, the whole deal. So that makes the choice easier: I already own it, it works great, and I don’t have to go around asking someone to borrow theirs or sell a kidney for another one.
 
-For coding the experience, I had, before I talked to wouter, 1 main environment, Unity. This platform works with C# and as I'm familiar there that seemed like the obvious choice. but! Wouter also asked me to look into Unreal Engine 5 for the possibilities on that end. I've worked with Unreal in the past but am quite primitive in C++ but I did figure out that my favorite VR game, (The walking dead: saints and sinners) is infact coded over there! The more you know.
+That said, the Vision Pro does have some insane quality going for it. Super crispy visuals, fancy interactions... but also super expensive and kind of limited right now. Still, it *could* be fun to test something out on it later down the line.
 
-After some research, for me it was clear that I was going to use Unity as I didnt want to focus on learning Unreal properly to actially put something up. (even though they do offer some nice quirks)
+---
+
+### Coding it: Unity vs Unreal
+
+Now for the nerdy part: how do I *build* this thing?
+
+Before I had a chat with Wouter, I was fully planning to use **Unity**. It’s solid, I know my way around C#, and it’s kind of the default for VR stuff anyway. Easy choice.
+
+**But!** Then Wouter asked me if I looked into Unreal Engine 5?
+
+So I did. And yeah, Unreal looks sick. It’s gorgeous, the tools are powerful, and turns out one of my fave VR games: *The Walking Dead: Saints & Sinners* was actually built in Unreal!
+
+![The Walking Dead: Saints & Sinners gameplay screenshot](https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/916840/ss_f732a512b30a1f583fce0525038304684618aa7e.1920x1080.jpg?t=1744761535)
+*Screenshot from The Walking Dead: Saints & Sinners*
+
+Thing is... Unreal uses **C++**, and I am *not* fluent. I’ve dabbled. Enough to poke around. But building something full-on in it? That’d be a project *on top* of the project.
+
+After messing around with both, I came back to Unity. It’s just quicker for me to get something up and running. Sure, Unreal has its perks (especially for visuals), but for this first go at making a full VR thing. I wanna build, not get stuck learning syntax.
+
+So yeah, Unity it is. Meta Quest 3. C#. Let’s build something immersive.
+
+More soon.
