@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="favicon.png"><!-- Primary Meta Tags --><title>Shoot to Interact</title><meta name="title" content="Shoot to Interact"><meta name="description" content="Building the first real VR interaction"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-blog-template.netlify.app/blog/shooting-interaction"><meta property="og:title" content="Shoot to Interact"><meta property="og:description" content="Building the first real VR interaction"><meta property="og:image" content="https://astro-blog-template.netlify.app/assets/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-blog-template.netlify.app/blog/shooting-interaction"><meta property="twitter:title" content="Shoot to Interact"><meta property="twitter:description" content="Building the first real VR interaction"><meta property="twitter:image" content="https://astro-blog-template.netlify.app/assets/social.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CMTcOisY.js"></script><!-- This is intentionally inlined to avoid FOUC --><script>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="favicon.png"><!-- Primary Meta Tags --><title>Image to 3D mesh</title><meta name="title" content="Image to 3D mesh"><meta name="description" content="Options on how to convert image to a mesh"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-blog-template.netlify.app/blog/image-to-mesh"><meta property="og:title" content="Image to 3D mesh"><meta property="og:description" content="Options on how to convert image to a mesh"><meta property="og:image" content="https://astro-blog-template.netlify.app/assets/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-blog-template.netlify.app/blog/image-to-mesh"><meta property="twitter:title" content="Image to 3D mesh"><meta property="twitter:description" content="Options on how to convert image to a mesh"><meta property="twitter:image" content="https://astro-blog-template.netlify.app/assets/social.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CMTcOisY.js"></script><!-- This is intentionally inlined to avoid FOUC --><script>
   const root = document.documentElement
   const theme = localStorage.getItem('theme')
   if (
@@ -31,23 +31,42 @@
       fill="currentColor"
     >
       <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>11 June 2025 ~ 3 min read</p> <h1 data-astro-cid-4sn4zg3r>Shoot to Interact</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="shoot-to-interact">Shoot to Interact</h1>
-<p>Alright, so after I got Unity and the Meta Quest 3 set up and talking to each other, the next logical step was making things… do stuff. I wanted interaction. Movement. Feedback. And honestly, nothing screams “I’m actually doing VR dev now” like spawning a gun and shooting something.</p>
-<h2 id="the-gun-phase-obviously">The Gun Phase (obviously)</h2>
-<p>I kicked it off by trying to get some controller input working, nothing too wild yet. Just the basics. Hold the controller, have something show up in my virtual hand, feel like I’m holding something. So of course, I went with the most cliché (and most fun) first test: a gun.</p>
-<p>Now, getting this to work is not just drag and drop. It’s a <em>lot</em> of headset on, headset off, tweak this script, move that prefab, reposition something that’s floating in the wrong dimension. I was wearing the headset more like a backwards cap than properly on my face. Very flattering.</p>
-<p>I quickly modeled a super simple low-poly pistol, textured it (and by “textured” I mean slapped some color on it), and turned it into a Unity prefab. Dropped it into the scene, lined it up with my right controller, and adjusted the position/rotation/scale until it looked halfway believable. Nothing fancy, but good enough to go pew pew.</p>
-<h2 id="pew-pew-logic">Pew Pew Logic</h2>
-<p>Next up: make it actually shoot. That meant diving into some Unity scripting and wiring up a simple raycast. Pull the trigger, fire a ray from the gun barrel forward. If it hits something, it returns a hit. I also added a basic gunshot sound, which honestly made it feel <em>way</em> more real even without any visuals.</p>
-<p>Later on, I got fancy and added a visible bullet object. Not a physics-driven one yet, just a 3D shape moving forward in space. But it already made the interaction feel more tactile. It’s crazy how much difference a little feedback makes.</p>
-<h2 id="using-my-apartment-as-a-target">Using My Apartment as a Target</h2>
-<p>So the next part got a bit more meta. I wanted to make the environment relevant, not just throw bullets into a grey void. So I looked into using a scan of my apartment as a backdrop. I already had one from using the headset’s room setup tools (you know, the thing that helps you not walk into a wall), and figured: why not use it?</p>
-<p>Turns out, Meta’s passthrough features actually let you bring that scanned mesh into Unity. It’s rough, but it gives you the structure of your real-world space. Using one of their SDK building blocks, I was able to load that scan in as a static mesh and layer it into my passthrough.</p>
-<p>Now, when I fired a bullet, it wouldn’t just vanish, it would hit the walls or floor of my scanned apartment. It didn’t break or react yet (I wasn’t at the physics stage), but just seeing bullets land in familiar spots was kinda surreal.</p>
-<h2 id="sharing-the-base-with-wouter">Sharing the Base with Wouter</h2>
-<p>I brought this whole prototype to Wouter during a consult, mostly to show the concept was working. The idea was simple but key: get a basic interaction loop working inside a real scanned space. Nothing too polished yet, but you could see the gun, hear it shoot, and watch bullets fly into your environment and stick.</p>
-<p>That moment was important, it was the first real “ok, this is a thing now” checkpoint. I had something working, and from here I could start building toward deeper interactions and more realistic environments.</p>
-<p>Still no physics, baby steps.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
+    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>17 June 2025 ~ 3 min read</p> <h1 data-astro-cid-4sn4zg3r>Image to 3D mesh</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <p>So I got the ball rolling in the VR department, but the next inevitable hurdle came rolling in: turning a still image—snapped from inside the VR headset—into a proper 3D mesh. Something tangible. Something I could pull back into the virtual world, but now with actual depth.</p>
+<p>Now, yes, there are <strong>paid services</strong> out there that offer image-to-mesh capabilities. Some of the ones that popped up during my research were:</p>
+<ul>
+<li><strong>Kaedim</strong> – sleek UI, quick turnaround, great for stylized game assets.</li>
+<li><strong>Luma AI</strong> – photorealistic results, captures light and texture well.</li>
+<li><strong>RealityCapture</strong> – pro-level photogrammetry, supports huge datasets.</li>
+</ul>
+<p>These platforms are great because they:</p>
+<ul>
+<li>Offload the heavy lifting to cloud-based compute.</li>
+<li>Handle photogrammetry pipelines with a single upload.</li>
+<li>Often come with texture baking and PBR export support.</li>
+</ul>
+<p>But… I don’t always want to be at the mercy of a paywall or a queue, and more importantly, I wanted something that could run locally—on my own hardware. Which would make the game lean even more into <strong>PCVR</strong> territory, but hey, at least I get to tinker.</p>
+<h2 id="huggingface-to-the-rescue">HuggingFace to the rescue</h2>
+<p>While diving into HuggingFace, I stumbled on a few <strong>open-source options</strong> that can convert images (or multi-view captures) into meshes. Some gems worth mentioning:</p>
+<ul>
+<li><strong>Stable Video 3D</strong> – by the Stability AI team, surprisingly good single-image reconstructions.</li>
+<li><strong>Zero123++</strong> – generates multi-view images from one still and feeds them into reconstruction tools.</li>
+<li><strong>Volinga</strong> – a newer experiment that reconstructs scenes via NeRF-style approaches.</li>
+</ul>
+<p>What’s nice about these is:</p>
+<ul>
+<li>They’re <strong>free</strong> (as in buy me a beer-free).</li>
+<li>Fully local—great for privacy and fast iteration.</li>
+<li>Highly hackable and composable with other AI workflows.</li>
+</ul>
+<h2 id="comfyui--trellis-">ComfyUI + Trellis = 🔁</h2>
+<p>Out of all of them, I ended up diving into <strong>Trellis</strong>, a relatively new effort that plugs into the world of NeRFs and mesh reconstructions. Even better: someone made a comfy set of <strong>ComfyUI nodes</strong> for it. That meant I could patch it into my existing AI pipeline without rewriting everything from scratch.</p>
+<p>Granted, it wasn’t exactly plug-and-play. The original nodes were built for Linux systems, so on Windows I had to:</p>
+<ul>
+<li>Switch versions on other packages like torch and python.</li>
+<li>Patch some shell commands into <code>.bat</code> scripts.</li>
+<li>Tweak CUDA paths and recompile some bits.</li>
+</ul>
+<p>But eventually, with enough duct tape and patience, I got my first mesh out of a single VR snapshot (copy and pasted, not through the set yet). And it looked… decent! Not triple-A ready, but more than usable for placeholder prototyping in the engine.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
 Hi, I'm <strong data-astro-cid-2jiluk5e>Frederik</strong>. I'm a devine student based in Belgium.
     You can 
     see some of my work on <a href="https://github.com/FrederikDG" target="_blank" data-astro-cid-2jiluk5e>GitHub</a>,
