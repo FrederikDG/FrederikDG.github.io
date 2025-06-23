@@ -1,7 +1,7 @@
 ---
 title: Giving My Voice a Role  
 slug: voice-console-integration  
-publishDate: 10 June 2025  
+publishDate: 14 June 2025  
 description: Implementing local voice transcription and an in-game console on Meta Quest 3  
 ---
 

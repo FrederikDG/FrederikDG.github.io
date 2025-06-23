@@ -1,7 +1,7 @@
 ---
 title: Shoot to Interact  
 slug: shooting-interaction  
-publishDate: 08 June 2025  
+publishDate: 11 June 2025  
 description: Building the first real VR interaction  
 ---
 
