@@ -1,7 +1,7 @@
 ---
 title: Laptop Development Hell - When Your Project Becomes Machine-Specific
 slug: laptop-development-hell
-publishDate: 04 July 2025
+publishDate: 14 August 2025
 description: How moving to a different PC turned my working VR project into a broken mess
 ---
 
