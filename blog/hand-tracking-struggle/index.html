@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="favicon.png"><!-- Primary Meta Tags --><title>Hand Tracking - When Your Hands Betray You</title><meta name="title" content="Hand Tracking - When Your Hands Betray You"><meta name="description" content="The painful journey from controller-based interactions to hand tracking"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-blog-template.netlify.app/blog/hand-tracking-struggle"><meta property="og:title" content="Hand Tracking - When Your Hands Betray You"><meta property="og:description" content="The painful journey from controller-based interactions to hand tracking"><meta property="og:image" content="https://astro-blog-template.netlify.app/assets/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-blog-template.netlify.app/blog/hand-tracking-struggle"><meta property="twitter:title" content="Hand Tracking - When Your Hands Betray You"><meta property="twitter:description" content="The painful journey from controller-based interactions to hand tracking"><meta property="twitter:image" content="https://astro-blog-template.netlify.app/assets/social.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CMTcOisY.js"></script><!-- This is intentionally inlined to avoid FOUC --><script>
+  const root = document.documentElement
+  const theme = localStorage.getItem('theme')
+  if (
+    theme === 'dark' ||
+    (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)
+  ) {
+    root.classList.add('theme-dark')
+  } else {
+    root.classList.remove('theme-dark')
+  }
+</script><style>div[data-astro-cid-2jiluk5e]{align-items:center;display:flex}img[data-astro-cid-2jiluk5e]{width:100px;height:100px;border-radius:100px;display:block;margin-right:20px}p[data-astro-cid-2jiluk5e]{font-size:1.125rem}header[data-astro-cid-4sn4zg3r]{text-align:center}header[data-astro-cid-4sn4zg3r] h1[data-astro-cid-4sn4zg3r]{margin-bottom:.7em}header[data-astro-cid-4sn4zg3r] p[data-astro-cid-4sn4zg3r]{color:var(--text-secondary);text-transform:uppercase;font-family:var(--font-family-sans);font-weight:600}header[data-astro-cid-4sn4zg3r] hr[data-astro-cid-4sn4zg3r]{min-width:100px;width:30%}
+</style>
+<link rel="stylesheet" href="/_astro/about.BqGDsome.css"></head> <body data-astro-cid-37fxchfa> <div class="layout" data-astro-cid-37fxchfa> <header data-astro-cid-3ef6ksr2> <a href="/" data-astro-cid-tvrurpns> <img alt="Blog Logo" src="/favicon.png" width="75" height="50" data-astro-cid-tvrurpns> </a> <nav data-astro-cid-dmqpwcec> <a class href="/" data-astro-cid-dmqpwcec>home</a> <!-- <a class={current === "about" ? "selected" : ""} href='/about'>about</a> --> <a class="selected" href="/blog" data-astro-cid-dmqpwcec>blog</a> <div class="theme-toggle-container" data-astro-cid-dmqpwcec> <style>astro-island,astro-slot,astro-static-slot{display:contents}</style><script>(()=>{var e=async t=>{await(await t())()};(self.Astro||(self.Astro={})).load=e;window.dispatchEvent(new Event("astro:load"));})();;(()=>{var A=Object.defineProperty;var g=(i,o,a)=>o in i?A(i,o,{enumerable:!0,configurable:!0,writable:!0,value:a}):i[o]=a;var d=(i,o,a)=>g(i,typeof o!="symbol"?o+"":o,a);{let i={0:t=>m(t),1:t=>a(t),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(a(t)),5:t=>new Set(a(t)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(t),9:t=>new Uint16Array(t),10:t=>new Uint32Array(t),11:t=>1/0*t},o=t=>{let[l,e]=t;return l in i?i[l](e):void 0},a=t=>t.map(o),m=t=>typeof t!="object"||t===null?t:Object.fromEntries(Object.entries(t).map(([l,e])=>[l,o(e)]));class y extends HTMLElement{constructor(){super(...arguments);d(this,"Component");d(this,"hydrator");d(this,"hydrate",async()=>{var b;if(!this.hydrator||!this.isConnected)return;let e=(b=this.parentElement)==null?void 0:b.closest("astro-island[ssr]");if(e){e.addEventListener("astro:hydrate",this.hydrate,{once:!0});return}let c=this.querySelectorAll("astro-slot"),n={},h=this.querySelectorAll("template[data-astro-template]");for(let r of h){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(let r of c){let s=r.closest(this.tagName);s!=null&&s.isSameNode(this)&&(n[r.getAttribute("name")||"default"]=r.innerHTML)}let p;try{p=this.hasAttribute("props")?m(JSON.parse(this.getAttribute("props"))):{}}catch(r){let s=this.getAttribute("component-url")||"<unknown>",v=this.getAttribute("component-export");throw v&&(s+=` (export ${v})`),console.error(`[hydrate] Error parsing props for component ${s}`,this.getAttribute("props"),r),r}let u;await this.hydrator(this)(this.Component,p,n,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),this.dispatchEvent(new CustomEvent("astro:hydrate"))});d(this,"unmount",()=>{this.isConnected||this.dispatchEvent(new CustomEvent("astro:unmount"))})}disconnectedCallback(){document.removeEventListener("astro:after-swap",this.unmount),document.addEventListener("astro:after-swap",this.unmount,{once:!0})}connectedCallback(){if(!this.hasAttribute("await-children")||document.readyState==="interactive"||document.readyState==="complete")this.childrenConnectedCallback();else{let e=()=>{document.removeEventListener("DOMContentLoaded",e),c.disconnect(),this.childrenConnectedCallback()},c=new MutationObserver(()=>{var n;((n=this.lastChild)==null?void 0:n.nodeType)===Node.COMMENT_NODE&&this.lastChild.nodeValue==="astro:end"&&(this.lastChild.remove(),e())});c.observe(this,{childList:!0}),document.addEventListener("DOMContentLoaded",e)}}async childrenConnectedCallback(){let e=this.getAttribute("before-hydration-url");e&&await import(e),this.start()}async start(){let e=JSON.parse(this.getAttribute("opts")),c=this.getAttribute("client");if(Astro[c]===void 0){window.addEventListener(`astro:${c}`,()=>this.start(),{once:!0});return}try{await Astro[c](async()=>{let n=this.getAttribute("renderer-url"),[h,{default:p}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),u=this.getAttribute("component-export")||"default";if(!u.includes("."))this.Component=h[u];else{this.Component=h;for(let f of u.split("."))this.Component=this.Component[f]}return this.hydrator=p,this.hydrate},e,this)}catch(n){console.error(`[astro-island] Error hydrating ${this.getAttribute("component-url")}`,n)}}attributeChangedCallback(){this.hydrate()}}d(y,"observedAttributes",["props"]),customElements.get("astro-island")||customElements.define("astro-island",y)}})();</script><astro-island uid="Z1l6Je0" component-url="/_astro/ThemeToggleButton.B1Kp2Ltp.js" component-export="default" renderer-url="/_astro/client.svelte.xA49wdBm.js" props="{&quot;data-astro-cid-dmqpwcec&quot;:[0,true]}" ssr client="load" opts="{&quot;name&quot;:&quot;ThemeToggleButton&quot;,&quot;value&quot;:true}" await-children><!--[--><div class="theme-toggle"><!--[--><label><!----><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+        clip-rule="evenodd"
+      />
+    </svg><!----> <input type="radio" name="theme-toggle" value="light" title="Use light theme" aria-label="Use light theme"></label><label><!----><svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>04 August 2025 ~ 5 min read</p> <h1 data-astro-cid-4sn4zg3r>Hand Tracking - When Your Hands Betray You</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="hand-tracking---when-your-hands-betray-you">Hand Tracking - When Your Hands Betray You</h1>
+<p>Controllers are easy. You press a button, something happens. You move the controller, it tracks perfectly. Simple, reliable, boring.</p>
+<p>Hand tracking? Hand tracking is where things get spicy.</p>
+<h2 id="the-promise-vs-reality">The Promise vs Reality</h2>
+<p>Meta’s marketing makes hand tracking look magical. Just reach out and grab things! Point at UI elements! Natural gestures! No controllers needed!</p>
+<p>What they don’t show you in the demos is the five minutes of waving your hands around trying to get the tracking to kick in, or the way grab detection works about 60% of the time, or how pointing at UI elements requires the precision of a surgeon.</p>
+<h2 id="getting-started-the-easy-part">Getting Started (The Easy Part)</h2>
+<p>Setting up basic hand tracking in Unity with Meta’s SDK is actually straightforward. Enable hand tracking in the project settings, add the hand tracking components to your scene, and boom - you can see virtual hands that follow your real hands.</p>
+<p>That part works great. The hands move, the fingers bend, it looks like you’re really there. Very cool.</p>
+<h2 id="making-it-actually-work-the-hard-part">Making It Actually Work (The Hard Part)</h2>
+<p>But then you try to grab something, and that’s where the fun begins.</p>
+<p>With controllers, grab detection is binary. Button pressed = grab, button not pressed = not grab. With hands, the system has to guess when you’re “trying to grab” based on finger positions and proximity to objects.</p>
+<p>Sometimes you’re clearly grabbing something and it doesn’t register. Sometimes you’re just moving your hand near an object and it suddenly snaps to your palm. Sometimes the tracking loses your hand entirely and objects start flying around the scene.</p>
+<h2 id="the-grip-strength-nightmare">The Grip Strength Nightmare</h2>
+<p>Meta’s hand tracking uses this concept of “grip strength” - basically how tightly you’re making a fist. In theory, this lets you control how firmly you’re holding objects.</p>
+<p>In practice, it means you’re constantly fighting the system about whether you’re “holding” something or not. Relax your grip slightly? Object drops. Grip too tight? Your hand starts shaking from the effort and the object wobbles around.</p>
+<p>I spent hours tweaking the grip threshold values, trying to find that sweet spot where objects actually stay in your hand without requiring you to make a death grip.</p>
+<h2 id="ui-interaction-blues">UI Interaction Blues</h2>
+<p>Pointing at UI elements with your finger sounds natural, but it’s way less forgiving than a controller laser pointer. Your hand is always moving slightly, so the cursor is always jittering around. Hitting small buttons becomes an exercise in frustration.</p>
+<p>I ended up making all my UI buttons way bigger than I wanted, just so people could actually hit them reliably. Very elegant.</p>
+<h2 id="the-pinch-gesture-rabbit-hole">The Pinch Gesture Rabbit Hole</h2>
+<p>Meta pushes the pinch gesture (thumb to index finger) as the primary selection method. It’s supposed to be more precise than grab gestures.</p>
+<p>It is more precise, when it works. But the detection is finicky. Too light a pinch and nothing happens. Too firm and it registers multiple pinches. Move your hand while pinching and it might lose tracking entirely.</p>
+<p>I implemented fallback systems for when pinch detection fails, but then you have this weird interaction model where sometimes you pinch, sometimes you grab, sometimes you point, and users never know which one will work.</p>
+<h2 id="performance-considerations">Performance Considerations</h2>
+<p>Hand tracking is computationally expensive. The Quest is doing real-time computer vision to track 20+ points on each hand, multiple times per second. This absolutely murders your frame rate if you’re not careful.</p>
+<p>I had to dial back other visual effects and optimize everything else to maintain 90fps with hand tracking enabled. And you still get occasional hitches when the tracking system does something heavy.</p>
+<h2 id="when-it-actually-works">When It Actually Works</h2>
+<p>Despite all the complaints, when hand tracking works well, it’s genuinely magical. There’s something visceral about reaching out and manipulating objects with your actual hands instead of pressing buttons.</p>
+<p>The moments when grab detection works perfectly, when you can naturally point at things and select them, when the grip strength responds exactly how you expect - those moments make all the frustration worth it.</p>
+<h2 id="my-approach">My Approach</h2>
+<p>What I ended up with is a controller system. The hand interactions are cool and all but a waste of time for what I’m trying to achieve in this time frame.</p>
+<h2 id="looking-forward">Looking Forward</h2>
+<p>Hand tracking is clearly the future. It’s more natural, more immersive, and doesn’t require carrying controllers around. But we’re definitely in the early days.</p>
+<p>The technology will get better, the algorithms will get smarter, and hopefully the interaction models will become more standardized. But right now, it’s still a bit of a wild west.</p>
+<p>If you’re building something where precision matters, stick with controllers for now. If you want to show off the future of VR interaction and don’t mind some jank, hand tracking is definitely worth experimenting with.</p>
+<p>Just be prepared to spend a lot of time tweaking sensitivity values.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
+Hi, I'm <strong data-astro-cid-2jiluk5e>Frederik</strong>. I'm a devine student based in Belgium.
+    You can 
+    see some of my work on <a href="https://github.com/FrederikDG" target="_blank" data-astro-cid-2jiluk5e>GitHub</a>,
+    or read more about me on <a href="https://www.studiolost.be" target="_blank" data-astro-cid-2jiluk5e>my website</a>.
+</p> </div>  </div>  </main> <footer data-astro-cid-sz7xmlte> <span data-astro-cid-sz7xmlte>
+&copy; 2025 Jan-Frederik de Graaf
+</span> </footer>  </div> </body></html> 
