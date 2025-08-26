@@ -1,11 +1,10 @@
 ---
-title: Hello World 👋
+title: Hello World
 slug: hello-world
 publishDate: 02 june 2025
 description: Exploring VR development through a personal project.
 ---
 
-# Welcome to my blog! 🎉
+# Hello World
 
-I guess I got it running, right?
- 
+got the blog working. neat.

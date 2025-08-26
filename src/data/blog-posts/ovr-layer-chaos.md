@@ -1,32 +1,31 @@
 ---
-title: When OVR Takes Over Your Project - Layers, Tags, and Other Surprises
+title: When OVR Takes Over Your Project
 slug: ovr-layers-chaos
 publishDate: 03 August 2025
-description: How Meta's SDK quietly reorganizes your entire Unity project without asking
+description: How Meta's SDK quietly reorganizes your Unity project
 ---
 
-# When OVR Takes Over Your Project - Layers, Tags, and Other Surprises
+# Meta SDK Hostile Takeover
 
-So here's something nobody warns you about when you import Meta's XR SDK: it doesn't just add some prefabs and scripts. It basically moves into your Unity project and starts rearranging the furniture.
+nobody warns you about this when importing Meta's XR SDK: it doesn't just add prefabs and scripts. basically moves into your Unity project and starts rearranging furniture.
 
-## The Great Layer Shuffle
+## the layer shuffle
 
-I had a perfectly organized layer setup. UI on layer 5, interactive objects on layer 8, environment on layer 10. Simple, clean, worked great.
+had perfectly organized layer setup. UI on layer 5, interactive objects on layer 8, environment on layer 10. simple, clean, worked.
 
-Then I imported the Meta XR All-in-One SDK.
+then imported Meta XR SDK.
 
-Suddenly I have new layers I didn't create:
+suddenly have new layers i didn't create:
 - OVROverlay
 - OVRUnderlay  
 - VirtualObjects
 - PhysicalObjects
-- Whatever else Meta decided I needed
 
-And my existing objects? Some of them got moved to different layers automatically. My UI elements that were on layer 5 are now on some Meta-specific UI layer. My interactive objects are scattered across three different layers based on whether Meta thinks they're "physical" or "virtual."
+my existing objects? some moved to different layers automatically. UI elements that were layer 5 now on some Meta-specific UI layer. interactive objects scattered across three layers based on whether Meta thinks they're "physical" or "virtual."
 
-## Tag Invasion
+## tag invasion
 
-Same thing happened with tags. I had maybe five custom tags for different object types. After the SDK import, my tag list looks like a Meta developer's todo list:
+same thing with tags. had maybe five custom tags for object types. after SDK import tag list looks like Meta developer's todo:
 
 - OVRTouchable
 - OVRGrabbable  
@@ -34,40 +33,34 @@ Same thing happened with tags. I had maybe five custom tags for different object
 - OVRSceneAnchor
 - OVRPassthroughObject
 
-And the kicker? Some of my existing objects got retagged automatically. My grabbable cubes that had the tag "Interactive" now have "OVRGrabbable" instead.
+some existing objects got retagged automatically. grabbable cubes with "Interactive" tag now have "OVRGrabbable" instead.
 
-## Camera Setup Chaos
+## camera hierarchy madness
 
-This one really got me. I had a simple camera setup for testing - just the main camera with some basic settings. After importing Meta's SDK and adding their camera rig, my original camera was still there but completely ignored.
+had simple camera setup for testing - main camera with basic settings. after importing SDK and adding camera rig my original camera was still there but completely ignored.
 
-It took me way too long to figure out that the OVRCameraRig creates its own camera hierarchy and expects to be the only camera system in the scene. My original camera wasn't broken, it just became irrelevant.
+took too long to figure out OVRCameraRig creates its own camera hierarchy and expects to be only camera system in scene. original camera wasn't broken, just became irrelevant.
 
-## Passthrough vs Everything Else
+## passthrough rendering confusion
 
-The most confusing part is how passthrough interacts with the rest of your scene. It's not just a background - it's this whole separate rendering layer that has opinions about what should render in front of it and what shouldn't.
+most confusing part is how passthrough interacts with scene rendering. not just background - separate layer with opinions about what renders in front and what doesn't.
 
-I had UI elements that worked fine in normal VR suddenly becoming invisible because they were rendering "behind" the passthrough layer. Turns out you need to use OVROverlayCanvas instead of regular Canvas components if you want UI to show up properly in passthrough mode.
+had UI elements working fine in normal VR suddenly becoming invisible because rendering "behind" passthrough layer. turns out need OVROverlayCanvas instead of regular Canvas for UI to show in passthrough mode.
 
-But nobody tells you this upfront. You just start testing and wonder why half your interface disappeared.
+nobody mentions this upfront. you just test and wonder why half interface disappeared.
 
-## The Physics Surprise
+## physics layer opinions
 
-Here's a fun one: Meta's SDK has strong opinions about physics layers too. Some interactions only work if objects are on specific physics layers. My basic rigidbody objects that worked fine for collision detection suddenly couldn't be grabbed by Meta's interaction system because they weren't on the right layer.
+Meta's SDK has strong opinions about physics layers too. some interactions only work if objects on specific layers. basic rigidbody objects that worked for collision suddenly couldn't be grabbed because weren't on right layer.
 
-The documentation mentions this, but it's buried in some sub-section about advanced configuration. Meanwhile, you're just trying to make a cube grabbable.
+documentation mentions this but buried in sub-section about advanced configuration. meanwhile just trying to make cube grabbable.
 
-## Scene Hierarchy Madness
+## what i learned
 
-The OVRCameraRig doesn't just add a camera - it adds a whole hierarchy of anchors, trackers, and child objects. If you're not careful about where you parent your objects, you end up with stuff attached to the wrong transform and moving in weird ways.
+Meta's SDK isn't addition to your project - it's takeover. wants to be primary VR system and will reorganize things to make that happen.
 
-I had objects that were supposed to be world-positioned suddenly following my head movement because I accidentally parented them to the CenterEyeAnchor instead of the scene root.
+not necessarily bad. Meta's organization probably makes more sense than my random assignments. but surprising when not expecting it.
 
-## What I Learned
+next VR project importing Meta SDK first then building around their structure instead of retrofitting into existing setup.
 
-The big lesson here is that Meta's SDK isn't just an addition to your project - it's a takeover. It wants to be the primary VR system, and it will reorganize things to make that happen.
-
-This isn't necessarily bad. Meta's organization probably makes more sense than my random layer assignments. But it's surprising when you're not expecting it.
-
-Next time I start a VR project, I'm importing the Meta SDK first, then building around their structure instead of trying to retrofit it into my existing setup.
-
-Or maybe I'll just accept that every VR project will have that moment where I wonder why nothing works anymore, then remember I need to check which layer everything ended up on.
+or maybe just accept every VR project has that moment where you wonder why nothing works then remember to check which layer everything ended up on.

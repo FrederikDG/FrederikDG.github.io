@@ -1,65 +1,69 @@
 ---
-title: Prototype Hell - When Every Test Becomes Its Own Project
+title: Prototype Hell  
 slug: prototype-hell
 publishDate: 27 June 2025
-description: How I ended up with seven different Unity projects and learned the hard way about feature creep
+description: How every test became its own Unity project
 ---
 
-# Prototype Hell - When Every Test Becomes Its Own Project
+# When Every Test Becomes a Project
 
-Remember that gun demo I made a few weeks back? Well, that was supposed to be a quick test. Just get something working, see if I could hit objects in my scanned room, then move on to the real stuff.
+remember that gun demo from few weeks back? supposed to be quick test. get something working, see if could hit objects in scanned room, move on.
 
-Except... it didn't work that way.
+didn't work that way.
 
-## The Spiral Begins
+## the feature creep spiral
 
-After showing Wouter the gun prototype, I had this list of "quick things to try":
-- What if I could grab objects instead of just shooting them?
-- Could I spawn basic shapes and interact with them?
-- What about a simple menu system?
-- How hard would hand tracking be to add?
+after showing wouter the gun prototype had list of "quick things to try":
+- grab objects instead of just shooting?
+- spawn basic shapes and interact?
+- simple menu system?
+- how hard is hand tracking?
 
-Each one seemed like a small addition. Just modify the existing project, right? Wrong.
+each seemed like small addition. just modify existing project right?
 
-## Seven Projects and Counting
+wrong.
 
-Here's what actually happened. Every time I wanted to test something new, I'd start changing the gun project. Then I'd break something. Then I'd spend an hour trying to fix it instead of testing the new feature. So I'd make a copy of the project. "Just for this test."
+## seven projects later
 
-Fast forward three weeks and I have:
+here's what actually happened. every time wanted to test something new i'd start changing gun project. then break something. spend hour fixing instead of testing new feature. so made project copy "just for this test."
+
+three weeks later have:
 - GunDemo_Original
-- GunDemo_WithGrabbing  
-- HandTracking_Test
+- GunDemo_WithGrabbing
+- HandTracking_Test  
 - MenuSystem_Prototype
 - ShapeSpawner_v1
-- ShapeSpawner_v2 (because v1 was "too messy")
+- ShapeSpawner_v2 (v1 was "too messy")
 - PassthroughUI_Experiment
 
-Each one is in a different Unity version because I kept reading about newer packages that might solve my problems. Some are on 2022.3, others on 2023.2, one unfortunate experiment in Unity 6 that I try not to think about.
+each in different Unity version because kept reading about newer packages that might solve problems. some 2022.3, others 2023.2, one unfortunate Unity 6 experiment i try not to think about.
 
-## The Integration Nightmare
+## integration nightmare
 
-Now I'm at the point where I need to actually build the real thing. And guess what? All these prototypes work fine in isolation, but trying to combine them is a disaster.
+now need to build actual thing. all these prototypes work fine alone but combining them is disaster.
 
-The hand tracking from HandTracking_Test uses different input handling than the grabbing system in GunDemo_WithGrabbing. The menu from MenuSystem_Prototype expects Unity XR components, but my best interaction code is in a project that uses Meta's SDK. And don't get me started on trying to merge different versions of the same package across Unity versions.
+hand tracking from HandTracking_Test uses different input handling than grabbing system in GunDemo_WithGrabbing. menu from MenuSystem_Prototype expects Unity XR components but best interaction code is in project using Meta's SDK.
 
-## What I Should Have Done
+trying to merge different package versions across Unity versions is its own special hell.
 
-Looking back, I should have:
-- Stuck with one Unity version from the start
-- Made one solid "kitchen sink" project for all experiments
-- Set up proper scene organization instead of treating each test as a separate project
-- Actually documented which approaches worked best instead of just leaving them in random project folders
+## what i should have done
 
-## The Messy Reality
+looking back should have:
+- stuck with one Unity version from start
+- made one solid project for all experiments  
+- set up proper scene organization instead of treating each test separately
+- documented which approaches worked instead of leaving them scattered
 
-But honestly? This is probably just how prototyping goes. When you're trying to figure out if something will work, the last thing you want to do is spend time setting up proper project structure. You want to test the idea, not build a cathedral.
+## messy reality
 
-The real problem is that I didn't plan for the point where all these experiments would need to come together. I was thinking like each test was the final answer, not a stepping stone.
+but honestly this is probably just how prototyping goes. when trying to figure out if something works last thing you want is spending time on proper project structure. want to test idea, not build cathedral.
 
-## Moving Forward
+real problem was not planning for point where experiments need to come together. was thinking each test was final answer, not stepping stone.
 
-Right now I'm doing the unglamorous work of rebuilding the "real" project by cherry-picking the best parts from all these prototypes. It's tedious, but at least I know what works and what doesn't.
+## moving forward
 
-And next time? Maybe I'll actually stick to that "one kitchen sink project" plan. Or maybe I'll end up with another folder full of experimental projects. 
+doing unglamorous work of rebuilding "real" project by cherry-picking best parts from prototypes. tedious but at least know what works and what doesn't.
 
-Honestly, probably the latter. But at least now I know to expect it.
+next time maybe stick to "one kitchen sink project" plan. or maybe end up with another folder full of experiments.
+
+honestly probably the latter. but at least now expect it.

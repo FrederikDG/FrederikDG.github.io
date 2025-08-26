@@ -1,32 +1,32 @@
 ---
 title: Unity Setup
 slug: unity-setup-quest3
-publishDate: 08 June 2025
+publishDate: 08 june 2025
 description: Setting up Unity for Meta Quest 3 development
 ---
 
-# Getting Unity & Meta Quest 3 to Talk
+# Getting Unity & Quest 3 to Talk
 
-So, after deciding to build this VR experience, the next step was getting Unity to play nice with my Meta Quest 3. Sounds straightforward, right? Well, not quite.
+getting unity to work with quest 3 should be straightforward. it's not.
 
-## The Setup Struggle
+## version hell
 
-I started by trying to connect my PC to Unity and get everything set up. That involved tweaking settings on the VR headset, preparing the headset itself, and, of course, setting up Unity. But here's where things got a bit messy.
+unity just released unity 6 which changed VR development significantly. plus the oculus-to-meta transition means half the tutorials use packages that don't exist anymore.
 
-Unity had just released a new version—Unity 6—which changed a lot of things about how to approach VR development. On top of that, the transition from Oculus to Meta for the headsets introduced its own set of changes. This meant that if I was following one tutorial on YouTube, it might contradict another because of differences in timestamps and workflows.
+decided to stick with unity 2022.3 LTS for stability. newer versions are too risky when you're trying to actually build something instead of just experimenting.
 
-Eventually, I decided to stick with Unity 2022.3.62f1 (Long Term Support) to keep things stable. This version had better support for the tools I needed and was less prone to unexpected changes.
+## XR plugin choice
 
-## Choosing the Right XR Plugin
+had to pick between OpenXR and Oculus plugins. OpenXR is supposedly the future and works across platforms. seemed safer since it's what three.js uses too.
 
-With Meta's acquisition of Oculus, features and integrations shifted. I needed to select a way of compiling the game, and the two main options were OpenXR and Oculus. OpenXR was widely regarded as the better option, especially since it's used in other platforms like three.js. So, it came to mind quicker.
+started with empty 3D project instead of VR template so i'd understand what's happening rather than accepting magic prefabs.
 
-But then I had to make sure it still worked with the plugins too! For ease of use, I created an empty 3D project file instead of using the VR template to ensure I understood what I was doing.
+## meta's toolkit
 
-## Leveraging Meta's Tools
+meta released the XR interaction toolkit SDK with basic VR building blocks. after lots of tinkering finally got basic passthrough working. no content yet but camera rig moves when i move my head and i can see stuff in the headset.
 
-Meta released the Meta XR Interaction Toolkit SDK to help developers set up their VR games. It includes basic building blocks to have the bare bones working. After a lot of tinkering and adjusting, I finally had the first official passthrough ready. There was no content yet, but I saw the camera rig in Unity move when I moved my head, and I saw stuff in the headset.
+## lessons learned
 
-## Lessons Learned
+VR setup isn't plug-and-play. between version changes, company transitions, and evolving best practices you need to stay adaptable and research thoroughly before diving in.
 
-Setting up Unity for Meta Quest 3 development isn't as plug-and-play as one might hope. Between version changes, shifting company structures, and evolving best practices, it's essential to stay adaptable and do thorough research before diving in.
+but once it works it's pretty satisfying seeing your head movement translate to virtual camera movement.

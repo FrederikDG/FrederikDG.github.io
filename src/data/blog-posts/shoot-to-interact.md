@@ -5,36 +5,26 @@ publishDate: 11 June 2025
 description: Building the first real VR interaction  
 ---
 
-# Shoot to Interact
+# First Real VR Interaction
 
-Alright, so after I got Unity and the Meta Quest 3 set up and talking to each other, the next logical step was making things... do stuff. I wanted interaction. Movement. Feedback. And honestly, nothing screams "I'm actually doing VR dev now" like spawning a gun and shooting something.
+after unity and quest 3 were talking the next step was making stuff actually do things. wanted interaction, movement, feedback. nothing says "doing VR dev" like making a gun and shooting stuff.
 
-## The Gun Phase (obviously)
+## building the gun
 
-I kicked it off by trying to get some controller input working, nothing too wild yet. Just the basics. Hold the controller, have something show up in my virtual hand, feel like I’m holding something. So of course, I went with the most cliché (and most fun) first test: a gun.
+started with basic controller input. hold controller, see something in virtual hand, feel like you're holding an object. went with the most cliche first test: a gun.
 
-Now, getting this to work is not just drag and drop. It’s a *lot* of headset on, headset off, tweak this script, move that prefab, reposition something that’s floating in the wrong dimension. I was wearing the headset more like a backwards cap than properly on my face. Very flattering.
+this isn't drag and drop though. lots of headset on, headset off, tweak script, move prefab, fix something floating in wrong dimension. wore the headset backwards more than properly.
 
-I quickly modeled a super simple low-poly pistol, textured it (and by "textured" I mean slapped some color on it), and turned it into a Unity prefab. Dropped it into the scene, lined it up with my right controller, and adjusted the position/rotation/scale until it looked halfway believable. Nothing fancy, but good enough to go pew pew.
+modeled simple low-poly pistol, textured it (slapped color on it), turned into unity prefab. dropped in scene, spent forever adjusting position/rotation/scale until it looked believable. nothing fancy but good enough for pew pew.
 
-## Pew Pew Logic
+## shooting logic
 
-Next up: make it actually shoot. That meant diving into some Unity scripting and wiring up a simple raycast. Pull the trigger, fire a ray from the gun barrel forward. If it hits something, it returns a hit. I also added a basic gunshot sound, which honestly made it feel *way* more real even without any visuals.
+next was making it actually shoot. unity scripting time - wired up simple raycast. pull trigger, fire ray from gun barrel forward. if it hits something, register hit. added basic gunshot sound which made it feel way more real even without visuals.
 
-Later on, I got fancy and added a visible bullet object. Not a physics-driven one yet, just a 3D shape moving forward in space. But it already made the interaction feel more tactile. It’s crazy how much difference a little feedback makes.
+later added visible bullet object. not physics-driven, just 3D shape moving forward. made interaction feel more tactile. crazy how much difference little feedback makes.
 
-## Using My Apartment as a Target
+## using my apartment as target range
 
-So the next part got a bit more meta. I wanted to make the environment relevant, not just throw bullets into a grey void. So I looked into using a scan of my apartment as a backdrop. I already had one from using the headset’s room setup tools (you know, the thing that helps you not walk into a wall), and figured: why not use it?
+wanted environment to be relevant instead of shooting into grey void. looked into using scan of my apartment as backdrop. already had one from headset's room setup tools.
 
-Turns out, Meta’s passthrough features actually let you bring that scanned mesh into Unity. It’s rough, but it gives you the structure of your real-world space. Using one of their SDK building blocks, I was able to load that scan in as a static mesh and layer it into my passthrough.
-
-Now, when I fired a bullet, it wouldn’t just vanish, it would hit the walls or floor of my scanned apartment. It didn’t break or react yet (I wasn’t at the physics stage), but just seeing bullets land in familiar spots was kinda surreal.
-
-## Sharing the Base with Wouter
-
-I brought this whole prototype to Wouter during a consult, mostly to show the concept was working. The idea was simple but key: get a basic interaction loop working inside a real scanned space. Nothing too polished yet, but you could see the gun, hear it shoot, and watch bullets fly into your environment and stick.
-
-That moment was important, it was the first real "ok, this is a thing now" checkpoint. I had something working, and from here I could start building toward deeper interactions and more realistic environments.
-
-Still no physics, baby steps.
+turns out meta's passthrough features let you bring scanned mesh into unity. rough but gives structure of real space. using SDK building blocks could load scan as stat

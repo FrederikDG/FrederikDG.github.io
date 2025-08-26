@@ -1,80 +1,78 @@
 ---
-title: Hand Tracking - When Your Hands Betray You
+title: Hand Tracking Sucks
 slug: hand-tracking-struggle  
 publishDate: 04 August 2025
-description: The painful journey from controller-based interactions to hand tracking
+description: The painful journey from controllers to hand tracking
 ---
 
-# Hand Tracking - When Your Hands Betray You
+# Hand Tracking Reality
 
-Controllers are easy. You press a button, something happens. You move the controller, it tracks perfectly. Simple, reliable, boring.
+controllers are easy. press button, thing happens. move controller, tracks perfectly. simple, reliable, boring.
 
-Hand tracking? Hand tracking is where things get spicy.
+hand tracking? hand tracking is where things get spicy.
 
-## The Promise vs Reality
+## promise vs reality
 
-Meta's marketing makes hand tracking look magical. Just reach out and grab things! Point at UI elements! Natural gestures! No controllers needed!
+Meta's marketing makes hand tracking look magical. just reach out and grab things! point at UI elements! natural gestures! no controllers needed!
 
-What they don't show you in the demos is the five minutes of waving your hands around trying to get the tracking to kick in, or the way grab detection works about 60% of the time, or how pointing at UI elements requires the precision of a surgeon.
+what they don't show is five minutes waving hands trying to get tracking to kick in. grab detection working maybe 60% of time. pointing at UI requiring surgeon precision.
 
-## Getting Started (The Easy Part)
+## getting started
 
-Setting up basic hand tracking in Unity with Meta's SDK is actually straightforward. Enable hand tracking in the project settings, add the hand tracking components to your scene, and boom - you can see virtual hands that follow your real hands.
+setting up hand tracking in Unity with Meta's SDK is straightforward. enable in project settings, add components to scene, boom - virtual hands following real hands.
 
-That part works great. The hands move, the fingers bend, it looks like you're really there. Very cool.
+that part works great. hands move, fingers bend, looks like you're really there. very cool.
 
-## Making It Actually Work (The Hard Part)
+then you try grabbing something and realize you've made terrible mistake.
 
-But then you try to grab something, and that's where the fun begins.
+## grab detection hell
 
-With controllers, grab detection is binary. Button pressed = grab, button not pressed = not grab. With hands, the system has to guess when you're "trying to grab" based on finger positions and proximity to objects.
+with controllers grab is binary. button pressed = grab, not pressed = not grab. with hands system has to guess when you're "trying to grab" based on finger positions and object proximity.
 
-Sometimes you're clearly grabbing something and it doesn't register. Sometimes you're just moving your hand near an object and it suddenly snaps to your palm. Sometimes the tracking loses your hand entirely and objects start flying around the scene.
+sometimes clearly grabbing something and doesn't register. sometimes just moving hand near object and suddenly snaps to palm. sometimes tracking loses hand entirely and objects fly around scene.
 
-## The Grip Strength Nightmare
+## grip strength nightmare
 
-Meta's hand tracking uses this concept of "grip strength" - basically how tightly you're making a fist. In theory, this lets you control how firmly you're holding objects.
+Meta's hand tracking uses "grip strength" concept - how tightly you're making fist. in theory lets you control how firmly you hold objects.
 
-In practice, it means you're constantly fighting the system about whether you're "holding" something or not. Relax your grip slightly? Object drops. Grip too tight? Your hand starts shaking from the effort and the object wobbles around.
+in practice means constantly fighting system about whether you're "holding" something. relax grip slightly? object drops. grip too tight? hand shakes from effort and object wobbles.
 
-I spent hours tweaking the grip threshold values, trying to find that sweet spot where objects actually stay in your hand without requiring you to make a death grip.
+spent hours tweaking grip threshold values trying to find sweet spot where objects stay in hand without death grip.
 
-## UI Interaction Blues
+## UI interaction pain
 
-Pointing at UI elements with your finger sounds natural, but it's way less forgiving than a controller laser pointer. Your hand is always moving slightly, so the cursor is always jittering around. Hitting small buttons becomes an exercise in frustration.
+pointing at UI with finger sounds natural but way less forgiving than controller laser pointer. hand always moving slightly so cursor jitters constantly. hitting small buttons becomes exercise in frustration.
 
-I ended up making all my UI buttons way bigger than I wanted, just so people could actually hit them reliably. Very elegant.
+ended up making all UI buttons way bigger than wanted just so people could hit them reliably. very elegant.
 
-## The Pinch Gesture Rabbit Hole
+## pinch gesture rabbit hole
 
-Meta pushes the pinch gesture (thumb to index finger) as the primary selection method. It's supposed to be more precise than grab gestures.
+Meta pushes pinch gesture (thumb to index) as primary selection method. supposed to be more precise than grab gestures.
 
-It is more precise, when it works. But the detection is finicky. Too light a pinch and nothing happens. Too firm and it registers multiple pinches. Move your hand while pinching and it might lose tracking entirely.
+is more precise when it works. but detection is finicky. too light and nothing happens. too firm and registers multiple pinches. move hand while pinching and might lose tracking entirely.
 
-I implemented fallback systems for when pinch detection fails, but then you have this weird interaction model where sometimes you pinch, sometimes you grab, sometimes you point, and users never know which one will work.
+implemented fallback systems for when pinch fails but then have weird interaction model where sometimes pinch, sometimes grab, sometimes point. users never know which works.
 
-## Performance Considerations
+## performance hit
 
-Hand tracking is computationally expensive. The Quest is doing real-time computer vision to track 20+ points on each hand, multiple times per second. This absolutely murders your frame rate if you're not careful.
+hand tracking is computationally expensive. Quest doing real-time computer vision on 20+ hand points multiple times per second. absolutely murders framerate if not careful.
 
-I had to dial back other visual effects and optimize everything else to maintain 90fps with hand tracking enabled. And you still get occasional hitches when the tracking system does something heavy.
+had to dial back visual effects and optimize everything else to maintain 90fps with hand tracking enabled. still get occasional hitches when tracking does something heavy.
 
-## When It Actually Works
+## when it works
 
-Despite all the complaints, when hand tracking works well, it's genuinely magical. There's something visceral about reaching out and manipulating objects with your actual hands instead of pressing buttons.
+despite complaints when hand tracking works well it's genuinely magical. something visceral about reaching out and manipulating objects with actual hands instead of pressing buttons.
 
-The moments when grab detection works perfectly, when you can naturally point at things and select them, when the grip strength responds exactly how you expect - those moments make all the frustration worth it.
+moments when grab detection works perfectly, when you naturally point and select, when grip responds exactly right - those make frustration worth it.
 
-## My Approach
+## my approach
 
-What I ended up with is a controller system. The hand interactions are cool and all but a waste of time for what I'm trying to achieve in this time frame.
+ended up going back to controllers. hand interactions are cool but waste of time for what i'm trying to achieve in this timeframe.
 
-## Looking Forward
+hand tracking clearly the future. more natural, more immersive, no controllers to carry. but we're in early days.
 
-Hand tracking is clearly the future. It's more natural, more immersive, and doesn't require carrying controllers around. But we're definitely in the early days.
+technology will get better, algorithms smarter, interaction models more standardized. but right now still bit of wild west.
 
-The technology will get better, the algorithms will get smarter, and hopefully the interaction models will become more standardized. But right now, it's still a bit of a wild west.
+if building something where precision matters stick with controllers. want to show off future of VR interaction and don't mind jank? hand tracking worth experimenting with.
 
-If you're building something where precision matters, stick with controllers for now. If you want to show off the future of VR interaction and don't mind some jank, hand tracking is definitely worth experimenting with.
-
-Just be prepared to spend a lot of time tweaking sensitivity values.
+just be prepared to spend lots of time tweaking sensitivity values.

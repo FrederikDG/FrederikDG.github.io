@@ -1,125 +1,87 @@
 ---
-title: Bridging Unity and ComfyUI - Or How I Learned to Stop Worrying and Love HTTP Requests
+title: Bridging Unity and ComfyUI
 slug: unity-comfyui-connection
 publishDate: 30 June 2025
-description: Getting Unity to talk to ComfyUI for real-time 3D mesh generation from VR screenshots
+description: HTTP requests, JSON parsing, and async file transfers in VR
 ---
 
-# Bridging Unity and ComfyUI - Or How I Learned to Stop Worrying and Love HTTP Requests
+# Making Unity Talk to ComfyUI
 
-Alright, so I had ComfyUI running locally with that Trellis workflow for image-to-mesh conversion. And I had Unity capturing screenshots from inside VR. But getting them to actually talk to each other? That turned into a bigger project than I expected.
+I had ComfyUI running locally with Trellis workflow for image-to-mesh conversion. I had Unity capturing screenshots from VR. Getting them to actually communicate? Bigger project than expected.
 
 ## The Goal
 
-The idea was simple: take a photo in VR, send it to ComfyUI, get a 3D mesh back, drop it into the scene. Real-time object scanning, basically. Sounds straightforward until you actually try to do it.
+Simple concept: take photo in VR, send to ComfyUI, get 3D mesh back, drop into scene. Real-time object scanning basically. Sounds straightforward until you try implementing it.
 
-## ComfyUI's API (Sort Of)
+## ComfyUI's API Structure
 
-ComfyUI has an API, but it's not exactly REST-friendly. It's built around queuing workflows and checking status, not simple "send image, get mesh" requests. The workflow looks like this:
+ComfyUI has an API but it's not exactly REST-friendly. Built around queuing workflows and status checking, not simple "send image get mesh" requests.
 
-1. POST your workflow JSON to `/prompt`
-2. Get back a prompt ID
-3. Poll `/history/{prompt_id}` until it's done
-4. Download the output files
+Workflow:
 
-Simple enough, except each step can fail in creative ways.
+1. POST workflow JSON to `/prompt`
+2. Get prompt ID back
+3. Poll `/history/{prompt_id}` until completion
+4. Download output files
 
-## Unity's HTTP Client (The Painful Part)
+Each step can fail creatively.
 
-Unity's `UnityWebRequest` is... fine. But when you're dealing with multipart uploads, JSON parsing, and file downloads, it gets messy fast. Here's what I ended up building:
+## Unity HTTP pain points
+
+Unity's UnityWebRequest handles basic requests fine but multipart uploads, JSON parsing, and file downloads get messy fast. ended up building entire client system:
 
 ```csharp
 public class ComfyUIClient : MonoBehaviour
 {
     private string apiUrl = "http://localhost:8188";
-    
+
     public async Task<string> GenerateMesh(Texture2D image)
     {
-        // Convert texture to byte array
         byte[] imageData = image.EncodeToPNG();
-        
-        // Upload image first
         string imageId = await UploadImage(imageData);
-        
-        // Queue the workflow
         string promptId = await QueueWorkflow(imageId);
-        
-        // Wait for completion
         await WaitForCompletion(promptId);
-        
-        // Download the mesh
         return await DownloadMesh(promptId);
     }
 }
 ```
 
-The devil is in the implementation of those methods. `UploadImage` needs to handle multipart form data. `QueueWorkflow` requires building the workflow JSON dynamically with the uploaded image ID. `WaitForCompletion` is basically polling hell.
+## Workflow JSON Complexity
 
-## The Workflow JSON Nightmare
+ComfyUI workflows are massive JSON structures defining every node and connection. Making this work dynamically meant:
 
-ComfyUI workflows are these massive JSON structures that define every node and connection. To make this work dynamically, I had to:
+- Export working Trellis workflow as JSON
+- Locate image input node ID
+- Replace image filename with uploaded image ID at runtime
 
-1. Export my working Trellis workflow as JSON
-2. Find the image input node ID 
-3. Replace the image filename with the uploaded image ID at runtime
-
-This meant parsing and rebuilding JSON in Unity, which is always fun with C#'s type system.
+Required parsing and rebuilding JSON in Unity with C#'s type system. Not fun.
 
 ## File Transfer Headaches
 
-The biggest pain was actually getting files back and forth. ComfyUI expects images in its input folder, but the API upload puts them somewhere else. The output files have generated names that you have to parse from the history response.
+Biggest pain was file handling. ComfyUI expects images in input folder but API upload uses different location. Output files have generated names parsed from history responses.
 
-I ended up writing a custom file transfer system that:
-- Uploads images with predictable names
-- Maps ComfyUI's internal file IDs to actual filenames  
-- Downloads .obj files and converts them to Unity meshes
+Built custom system that uploads images with predictable names, maps ComfyUI internal IDs to filenames, downloads OBJ files and converts to Unity meshes.
 
-## Making It Work in VR
+## VR Integration Challenges
 
-All this HTTP request dance needed to happen without freezing the VR experience. So everything had to be async:
+All HTTP operations needed to happen without freezing VR experience. Everything had to be async with loading indicators and proper error handling.
 
-```csharp
-public async void OnCameraCapture()
-{
-    // Capture screenshot
-    Texture2D screenshot = CaptureVRView();
-    
-    // Show loading indicator
-    ShowLoadingUI();
-    
-    try 
-    {
-        // Send to ComfyUI (this takes 10-30 seconds)
-        string meshPath = await comfyClient.GenerateMesh(screenshot);
-        
-        // Load into Unity
-        GameObject mesh = LoadMeshFromFile(meshPath);
-        
-        // Spawn in VR scene
-        SpawnMeshInVR(mesh);
-    }
-    finally 
-    {
-        HideLoadingUI();
-    }
-}
-```
+Tricky part is keeping user engaged during 10-30 second processing time. Added spinning loading indicator and feedback text but still long wait.
 
-The tricky part is keeping the user engaged during that 10-30 second processing time. I added a spinning loading indicator and some feedback text, but it's still a long wait.
+## Final Result
 
-## What Actually Works
+After week of debugging HTTP requests and JSON parsing have system that:
 
-After about a week of debugging HTTP requests and JSON parsing, I have a system that:
-- Takes a VR screenshot
-- Sends it to ComfyUI running locally
-- Generates a basic 3D mesh
-- Imports it back into Unity
-- Spawns it in the VR scene
+- Captures VR screenshots
+- Sends to local ComfyUI
+- Generates basic 3D mesh
+- Imports back to Unity
+- Spawns in VR scene
 
-It's not fast, and the mesh quality is hit-or-miss, but it works. Seeing an object you just photographed appear as a 3D model in VR is pretty magical, even when it looks like it was made of clay.
+Not fast and mesh quality varies but works. Seeing photographed object appear as 3D model in VR is pretty magical even when it looks like clay sculpture.
 
-## The Real Lesson
+## Lesson Learned
 
-Most of the work here wasn't the fancy AI stuff - it was just getting two different systems to exchange files reliably. Unity wants Texture2D objects, ComfyUI wants PNG files in specific folders, everybody has different ideas about how async operations should work.
+Most work wasn't fancy AI stuff - just getting two systems to exchange files reliably. Unity wants Texture2D objects, ComfyUI wants PNG files in specific folders, everyone has different async operation ideas.
 
-Sometimes the most "AI-powered" part of your project is just a really complicated file upload script.
+Sometimes most "AI-powered" part of project is complicated file upload script.

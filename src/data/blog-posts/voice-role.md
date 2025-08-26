@@ -5,41 +5,33 @@ publishDate: 14 June 2025
 description: Implementing local voice transcription and an in-game console on Meta Quest 3  
 ---
 
-# Giving My Voice a Role
+# Adding Voice and Debug Console
 
-After getting basic interactions up and running in my VR project, I wanted to add voice capabilities. Specifically, I aimed to transcribe my speech in real-time and display it within the VR environment. Additionally, I sought a straightforward in-game console to log messages without removing the headset.
+after basic interactions were working wanted to add voice capabilities. specifically transcribe speech in real-time and display it in VR. also wanted simple in-game console to see debug messages without removing headset.
 
-## Implementing Local Voice Transcription
+## local voice transcription
 
-To achieve on-device speech-to-text functionality, I integrated OpenAI's Whisper model into Unity using the [whisper.unity](https://github.com/saurabhchalke/whisper-meta-quest) package. This setup allows for local transcription on the Meta Quest 3 without relying on internet connectivity.
+integrated OpenAI's Whisper model using whisper.unity package for on-device speech-to-text. works locally on quest 3 without internet dependency.
 
-### Setup Steps:
+### setup process:
 
-1. **Integrate Whisper.unity**: Added the `whisper.unity` package to my Unity project via the Package Manager using the Git URL:  
-   `https://github.com/Macoron/whisper.unity.git?path=/Packages/com.whisper.unity`.
+1. added whisper.unity package via git URL in package manager
+2. downloaded whisper tiny model, placed in StreamingAssets folder  
+3. used Unity's Microphone API for audio input from quest's built-in mic
+4. created UI text element at bottom of VR interface for real-time display
 
-2. **Model Placement**: Downloaded the Whisper tiny model and placed it in the `StreamingAssets` folder to ensure it's included in the build.
+responsive setup that made spoken words visible in VR environment.
 
-3. **Microphone Input**: Utilized Unity's `Microphone` API to capture audio input from the Quest 3's built-in microphone.
+## in-game console for debugging
 
-4. **Transcription Display**: Created a UI text element anchored at the bottom of the VR interface to display the transcribed text in real-time.
+built basic console to display log messages directly in VR scene.
 
-This configuration provided a responsive and immersive way to visualize spoken words within the VR environment.
+simple UI panel using Unity's UI system, positioned in VR space for visibility. subscribed to Unity's `Application.logMessageReceived` event to capture and display log messages in console panel.
 
-## Adding an In-Game Console for Logging
+ensured console only appears in development builds to avoid performance overhead in production.
 
-For debugging purposes, I implemented a basic in-game console to display log messages directly within the VR scene.
+## results
 
-### Implementation Details:
+voice transcription and console enhanced interactivity and debuggability significantly. whisper.unity handled speech recognition efficiently on-device while console provided immediate feedback during development.
 
-- **Console UI**: Designed a simple UI panel using Unity's UI system, positioned it within the VR space for easy visibility.
-
-- **Log Capture**: Subscribed to Unity's `Application.logMessageReceived` event to capture log messages and display them in the console panel.
-
-- **Performance Considerations**: Ensured that the console only appears in development builds to avoid performance overhead in production.
-
-This setup allowed me to monitor logs without removing the headset, streamlining the development and debugging process.
-
-## Conclusion
-
-Integrating local voice transcription and an in-game console enhanced the interactivity and debuggability of my VR project on the Meta Quest 3. Utilizing the `whisper.unity` package enabled efficient on-device speech recognition, while the in-game console provided immediate feedback during development.
+both features streamlined VR development process by reducing need to remove headset for debugging or text input.

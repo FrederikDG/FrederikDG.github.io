@@ -1,65 +1,77 @@
 ---
-title: User Testing - When Reality Punches You in the Face
+title: User Testing Reality Check
 slug: user-testing-humbling
 publishDate: 02 July 2025
 description: Watching people use your VR project is both enlightening and terrifying
 ---
 
-# User Testing - When Reality Punches You in the Face
+# When Users Meet Your Project
 
-I thought my VR project was pretty intuitive. Point at things, grab stuff, take pictures, watch AI generate 3D models. Simple, right?
+thought my VR project was intuitive. point at things, grab stuff, take pictures, watch AI generate 3D models. simple right?
 
-Then I watched my first user try to use it.
+then watched first user try it.
 
-## The Setup
+## the setup
 
-I brought the project to a few friends to get some feedback. Nothing formal, just "hey, want to try this VR thing I'm working on?" I figured I'd get some nice validation and maybe a few minor suggestions.
+brought project to few friends for feedback. nothing formal, just "want to try this VR thing i'm working on?" figured i'd get validation and minor suggestions.
 
-I was not prepared for what actually happened.
+was not prepared for what actually happened.
 
-## User #1: The Controller Fumbler
+## user #1: controller confusion
 
-First person puts on the headset and immediately starts looking around - good sign. They see the floating menu, point at it with the controller ray... and nothing happens.
+first person puts on headset, starts looking around - good sign. sees floating menu, points at it with controller ray... nothing happens.
 
-Turns out I never explained that you need to pull the trigger to click. In my head, "point and click" was obvious. To them, pointing was the entire interaction.
+turns out never explained you need to pull trigger to click. in my head "point and click" was obvious. to them pointing was entire interaction.
 
-After I explained the trigger, they started clicking everything rapidly, spawning cubes and spheres everywhere. Apparently my spawn cooldown wasn't aggressive enough to prevent this. Within 30 seconds, the scene was chaos.
+after explaining trigger they started clicking everything rapidly, spawning cubes and spheres everywhere. apparently spawn cooldown wasn't aggressive enough. within 30 seconds scene was chaos.
 
-## User #2: The Hand Tracking Optimist
+## user #2: hand tracking optimist
 
-Second person immediately asks if they can use hand tracking instead of controllers. Sure, I say, it's supported, it's not
+second person immediately asks if they can use hand tracking instead of controllers. sure i say, it's supported.
 
-Ha-ha
+ha. 
 
-## User #3: The Feature Hunter
+spent five minutes trying to get hand tracking to recognize their gestures while they waved at headset. when it finally worked grab detection was maybe 50% reliable. they got frustrated quickly and asked for controllers back.
 
-Third person actually gets the basic interactions working pretty quickly. They spawn some objects, grab them, move them around. Great!
+## user #3: feature hunter
 
-Then they start asking questions:
-- "Can I change the colors?"
-- "What if I want to delete objects?"
-- "How do I save my objects?"
-- "Can I share this with other people?"
+third person got basic interactions working quickly. spawned objects, grabbed them, moved them around. great!
 
-All reasonable questions. All features I hadn't implemented yet because I was focused on the core AI integration.
+then started asking questions:
+- "can i change colors?"
+- "how do i delete objects?"
+- "can i save my scene?"
+- "can i share this?"
 
-## The AI Disappointment
+all reasonable questions. all features i hadn't implemented because was focused on core AI integration.
 
-When we finally got to the main feature - taking pictures and generating 3D models - that's when things got really humbling.
+## the AI disappointment
 
-The first picture they took was of a coffee mug. Perfect test case, I thought. Simple object, clear shape, should work great.
+when we got to main feature - taking pictures and generating 3D models - things got really humbling.
 
-The generated mesh looked like a melted candle. Recognizably mug-shaped, but barely. And it took 40 seconds to generate, during which they just stood there waiting.
+first picture was coffee mug. perfect test case i thought. simple object, clear shape, should work great.
 
-"Is it supposed to look like that?" they asked.
+generated mesh looked like melted candle. recognizably mug-shaped but barely. took 40 seconds to generate while they stood there waiting.
 
-No. No it is not.
+"is it supposed to look like that?" they asked.
 
-## What Actually Worked
+no. no it is not.
 
-Not everything was a disaster. A few things people genuinely liked:
+## what actually worked
 
-- The passthrough integration felt "natural" and "cool"
-- Once they understood the spawning system, people enjoyed creating little scenes
-- The floating menu following their gaze was intuitive
-- When the AI generation actually worked, the "wow factor" was real
+not everything was disaster. few things people genuinely liked:
+
+- passthrough integration felt "natural" and "cool"
+- once they understood spawning system people enjoyed creating little scenes
+- floating menu following gaze was intuitive  
+- when AI generation actually worked the "wow factor" was real
+
+## lessons learned
+
+users don't read your mind. what seems obvious to developer isn't obvious to first-time user.
+
+need better onboarding, clearer feedback, more forgiving interaction systems. also need to manage expectations about AI generation quality and speed.
+
+but most importantly: user testing early and often. better to find these issues now than after spending months polishing features nobody can figure out how to use.
+
+humbling but necessary reality check.

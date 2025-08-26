@@ -1,43 +1,50 @@
 ---
-title: Laptop Development Hell - When Your Project Becomes Machine-Specific
+title: Laptop Development Hell
 slug: laptop-development-hell
 publishDate: 14 August 2025
-description: How moving to a different PC turned my working VR project into a broken mess
+description: How moving to different PC turned working VR project into broken mess
 ---
 
-# Laptop Development Hell - When Your Project Becomes Machine-Specific
+# Machine-Specific Project Hell
 
-I had a consult scheduled with Wouter and figured I'd work on the project from my laptop instead of lugging my desktop setup to school. Should be simple, right? Same Unity version, same project files, same headset. What could go wrong?
+had consult with wouter scheduled and figured work on project from laptop instead of lugging desktop setup to school. should be simple right? same Unity version, same project files, same headset.
 
-Everything. Everything could go wrong.
+everything went wrong.
 
-## The Great Package Disaster
+## package disaster
 
-First problem: the project wouldn't even open. Unity kept throwing errors about missing packages, even though I had committed everything to version control. Turns out some of the Meta XR SDK components don't play nice when moved between machines.
+first problem: project wouldn't even open. Unity throwing errors about missing packages even though committed everything to version control. turns out some Meta XR SDK components don't play nice when moved between machines.
 
-The packages were "there" but also "not there." They showed up in the Package Manager but with error icons. Half the scripts were missing references. The OVRCameraRig prefab was completely broken, showing as empty GameObjects with missing components.
+packages were "there" but also "not there." showed up in Package Manager with error icons. half scripts missing references. OVRCameraRig prefab completely broken, showing as empty GameObjects with missing components.
 
-I tried reimporting the packages, clearing the package cache, deleting and re-adding the Meta XR SDK. Nothing worked consistently. Some components would fix themselves, others would break in new creative ways.
+tried reimporting packages, clearing package cache, deleting and re-adding Meta XR SDK. nothing worked consistently. some components would fix themselves, others would break in new creative ways.
 
-## The GPU Nightmare
+## GPU nightmare
 
-My desktop has a decent RTX 4080. My laptop has... a laptop 3060 that Unity barely acknowledges exists. Suddenly my "optimized" VR project that ran smoothly on desktop was getting 5fps in the editor.
+desktop has decent RTX 4080. laptop has... laptop 3060 that Unity barely acknowledges exists. suddenly "optimized" VR project that ran smoothly on desktop was getting 5fps in editor.
 
-But the real kicker? The Quest 3 couldn't even connect properly. USB-C link kept failing, wireless streaming was a stuttering mess, and when I finally got it connected, the tracking was all jittery.
+real kicker? Quest 3 couldn't even connect properly. USB-C link kept failing, wireless streaming was stuttering mess, when finally got connected tracking was jittery.
 
+## ComfyUI catastrophe
 
-## The ComfyUI Catastrophe
+remember that Unity-ComfyUI integration i was proud of? completely broken on laptop. HTTP requests timing out, file paths wrong (Windows vs Windows somehow), even when got ComfyUI running locally was so slow mesh generation took five minutes instead of 30 seconds.
 
-Remember that Unity-ComfyUI integration I was so proud of? Completely broken on the laptop. The HTTP requests were timing out, the file paths were wrong (Windows vs Windows, somehow), and even when I got ComfyUI running locally, it was so slow that mesh generation took literally five minutes instead of 30 seconds.
+laptop's CPU apparently laughs at idea of running AI inference in reasonable timeframe.
 
-The laptop's CPU apparently laughs at the idea of running AI inference in any reasonable timeframe.
+## rollback panic
 
-## Version Rollback Panic
+with consult approaching fast made painful decision to roll back to earlier project version - one before latest ComfyUI features and performance optimizations. basically month of work unavailable for demo.
 
-With the consult approaching fast, I made the painful decision to roll back to an earlier version of the project - one from before I added the latest ComfyUI features and performance optimizations. Basically a month of work, unavailable for the demo.
+this version was more stable, fewer dependencies, crucially had worked on laptop before. but meant showing wouter less impressive version than what actually had working on main machine.
 
-This version was more stable, had fewer dependencies, and crucially, had worked on the laptop before. But it meant showing Wouter a less impressive version of the project than what I actually had working on my main machine.
+## lesson learned
 
-## Lessons Learned
+not wasting more time trying to make project work perfectly on laptop. just not worth frustration. from now sticking to main development machine for anything critical, treating laptop as backup for lightweight tasks only.
 
-I'm not wasting any more time trying to make this project work perfectly on my laptop. It's just not worth the frustration. From now on, I'll stick to my main development machine for anything critical, and treat the laptop as a backup or for lightweight tasks only. Sometimes, the best fix is to avoid the problem entirely.
+sometimes best fix is avoiding problem entirely.
+
+VR development is finicky enough without adding hardware compatibility issues. when you find setup that works stick with it until project's done.
+
+cross-platform compatibility is nice in theory but reality is modern development involves too many moving pieces with too many dependencies. something always breaks when moving between machines.
+
+better to have one rock-solid development environment than constantly fighting compatibility issues across multiple setups.

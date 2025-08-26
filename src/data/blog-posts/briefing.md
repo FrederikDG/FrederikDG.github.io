@@ -5,50 +5,24 @@ publishDate: 03 june 2025
 description: What am I actually supposed to do?
 ---
 
-# 🚀 The Briefing: A Deep Dive into Independent Tech Exploration
+# The Briefing
 
-Over the next few weeks, I’ll be stepping away from traditional assignments to dive headfirst into a topic I’m passionate about: exploring new technology through experimentation, research, and development.
+for the next few weeks i'm doing this independent project instead of regular assignments. basically pick something i want to learn and go deep on it.
 
-## 🎯 What’s This All About?
+the whole point is immersion and exploration. apply what i've learned in the past two years at devine and push beyond it. devine's always been about lifelong learning so this is putting that into practice.
 
-This course is all about **immersion and exploration**. It's a chance to apply everything I’ve learned during my two years in the Devine program and more importantly, to go beyond it. Devine has always focused on *lifelong learning*, and this project is an example of that mindset. Here, I’m not just building something. I’m challenging myself to:
+## what i'm doing
 
-- Investigate a new or evolving technology  
-- Learn independently and document the process  
-- Make mistakes, iterate, and grow from them  
+treating this like i'm my own boss. that means creating my own planning, setting milestones, making deliverables. staying in touch with wouter who's coaching me through the process.
 
-There’s no commercial client or assignment brief. Just me, my curiosity, and a blank canvas.
+documenting everything here - what technologies i'm investigating, resources i'm using, successes and roadblocks. benchmarks, comparisons, key learnings. plans for next steps including things i want to pivot or improve.
 
-## 💡 The Role I’m Taking On
+## what you'll find here
 
-I’ll be approaching this project as an **independent expert**. That means:
+this is my public diary basically. regular updates with the tools i'm testing, mistakes i'm making, breakthroughs when they happen. also how feedback from peers and coaches is helping refine my approach.
 
-- Creating and owning my own **planning**, **milestones**, and **deliverables**  
-- Making regular **reflections** and **decisions** on my development direction  
-- Keeping in close contact with Wouter, my coach and Devine Lecturer, who will help guide my process  
-- Documenting every step here, from missteps to breakthroughs
+everything's on github from day one too - https://github.com/FrederikDG/VIRTUAL-INSANITY
 
-## 🧠 What You’ll Find on This Blog
+## coming up
 
-This blog is my **public diary**. I’ll be updating it regularly with:
-
-- The **technologies** and **tools** I’m investigating  
-- The **resources** I’m consulting  
-- My **successes** and the **roadblocks** I hit  
-- **Benchmarks**, **comparisons**, and key learnings  
-- Plans for my **next steps**, including things I want to pivot, improve, or explore further  
-
-I'll also share how feedback (from peers and coaches) has helped refine my thinking and development approach.
-
-## 🛠️ GitHub: Open from Day One
-
-In the spirit of working in the open, you can follow my project’s progress on [https://github.com/FrederikDG/VIRTUAL-INSANITY](github). Here you'll find everything I'm working on.
-
-## 🔍 Coming Soon: Research Question & Planning
-
-I’ll soon publish a dedicated post where I’ll outline:
-
-- A short and sharp **core project statement**  
-- My planned **deliverables**  
-
-This forms the foundation for my project and ensures that I stay on track of the core.
+next post will outline my core project statement and planned deliverables. that's the foundation that keeps me on track.
