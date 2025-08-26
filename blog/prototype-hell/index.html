@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="favicon.png"><!-- Primary Meta Tags --><title>Prototype Hell - When Every Test Becomes Its Own Project</title><meta name="title" content="Prototype Hell - When Every Test Becomes Its Own Project"><meta name="description" content="How I ended up with seven different Unity projects and learned the hard way about feature creep"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-blog-template.netlify.app/blog/prototype-hell"><meta property="og:title" content="Prototype Hell - When Every Test Becomes Its Own Project"><meta property="og:description" content="How I ended up with seven different Unity projects and learned the hard way about feature creep"><meta property="og:image" content="https://astro-blog-template.netlify.app/assets/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-blog-template.netlify.app/blog/prototype-hell"><meta property="twitter:title" content="Prototype Hell - When Every Test Becomes Its Own Project"><meta property="twitter:description" content="How I ended up with seven different Unity projects and learned the hard way about feature creep"><meta property="twitter:image" content="https://astro-blog-template.netlify.app/assets/social.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CMTcOisY.js"></script><!-- This is intentionally inlined to avoid FOUC --><script>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="favicon.png"><!-- Primary Meta Tags --><title>Prototype Hell</title><meta name="title" content="Prototype Hell"><meta name="description" content="How every test became its own Unity project"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-blog-template.netlify.app/blog/prototype-hell"><meta property="og:title" content="Prototype Hell"><meta property="og:description" content="How every test became its own Unity project"><meta property="og:image" content="https://astro-blog-template.netlify.app/assets/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-blog-template.netlify.app/blog/prototype-hell"><meta property="twitter:title" content="Prototype Hell"><meta property="twitter:description" content="How every test became its own Unity project"><meta property="twitter:image" content="https://astro-blog-template.netlify.app/assets/social.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CMTcOisY.js"></script><!-- This is intentionally inlined to avoid FOUC --><script>
   const root = document.documentElement
   const theme = localStorage.getItem('theme')
   if (
@@ -31,49 +31,51 @@
       fill="currentColor"
     >
       <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>27 June 2025 ~ 3 min read</p> <h1 data-astro-cid-4sn4zg3r>Prototype Hell - When Every Test Becomes Its Own Project</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="prototype-hell---when-every-test-becomes-its-own-project">Prototype Hell - When Every Test Becomes Its Own Project</h1>
-<p>Remember that gun demo I made a few weeks back? Well, that was supposed to be a quick test. Just get something working, see if I could hit objects in my scanned room, then move on to the real stuff.</p>
-<p>Except… it didn’t work that way.</p>
-<h2 id="the-spiral-begins">The Spiral Begins</h2>
-<p>After showing Wouter the gun prototype, I had this list of “quick things to try”:</p>
+    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>27 June 2025 ~ 3 min read</p> <h1 data-astro-cid-4sn4zg3r>Prototype Hell</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="when-every-test-becomes-a-project">When Every Test Becomes a Project</h1>
+<p>remember that gun demo from few weeks back? supposed to be quick test. get something working, see if could hit objects in scanned room, move on.</p>
+<p>didn’t work that way.</p>
+<h2 id="the-feature-creep-spiral">the feature creep spiral</h2>
+<p>after showing wouter the gun prototype had list of “quick things to try”:</p>
 <ul>
-<li>What if I could grab objects instead of just shooting them?</li>
-<li>Could I spawn basic shapes and interact with them?</li>
-<li>What about a simple menu system?</li>
-<li>How hard would hand tracking be to add?</li>
+<li>grab objects instead of just shooting?</li>
+<li>spawn basic shapes and interact?</li>
+<li>simple menu system?</li>
+<li>how hard is hand tracking?</li>
 </ul>
-<p>Each one seemed like a small addition. Just modify the existing project, right? Wrong.</p>
-<h2 id="seven-projects-and-counting">Seven Projects and Counting</h2>
-<p>Here’s what actually happened. Every time I wanted to test something new, I’d start changing the gun project. Then I’d break something. Then I’d spend an hour trying to fix it instead of testing the new feature. So I’d make a copy of the project. “Just for this test.”</p>
-<p>Fast forward three weeks and I have:</p>
+<p>each seemed like small addition. just modify existing project right?</p>
+<p>wrong.</p>
+<h2 id="seven-projects-later">seven projects later</h2>
+<p>here’s what actually happened. every time wanted to test something new i’d start changing gun project. then break something. spend hour fixing instead of testing new feature. so made project copy “just for this test.”</p>
+<p>three weeks later have:</p>
 <ul>
 <li>GunDemo_Original</li>
 <li>GunDemo_WithGrabbing</li>
 <li>HandTracking_Test</li>
 <li>MenuSystem_Prototype</li>
 <li>ShapeSpawner_v1</li>
-<li>ShapeSpawner_v2 (because v1 was “too messy”)</li>
+<li>ShapeSpawner_v2 (v1 was “too messy”)</li>
 <li>PassthroughUI_Experiment</li>
 </ul>
-<p>Each one is in a different Unity version because I kept reading about newer packages that might solve my problems. Some are on 2022.3, others on 2023.2, one unfortunate experiment in Unity 6 that I try not to think about.</p>
-<h2 id="the-integration-nightmare">The Integration Nightmare</h2>
-<p>Now I’m at the point where I need to actually build the real thing. And guess what? All these prototypes work fine in isolation, but trying to combine them is a disaster.</p>
-<p>The hand tracking from HandTracking_Test uses different input handling than the grabbing system in GunDemo_WithGrabbing. The menu from MenuSystem_Prototype expects Unity XR components, but my best interaction code is in a project that uses Meta’s SDK. And don’t get me started on trying to merge different versions of the same package across Unity versions.</p>
-<h2 id="what-i-should-have-done">What I Should Have Done</h2>
-<p>Looking back, I should have:</p>
+<p>each in different Unity version because kept reading about newer packages that might solve problems. some 2022.3, others 2023.2, one unfortunate Unity 6 experiment i try not to think about.</p>
+<h2 id="integration-nightmare">integration nightmare</h2>
+<p>now need to build actual thing. all these prototypes work fine alone but combining them is disaster.</p>
+<p>hand tracking from HandTracking_Test uses different input handling than grabbing system in GunDemo_WithGrabbing. menu from MenuSystem_Prototype expects Unity XR components but best interaction code is in project using Meta’s SDK.</p>
+<p>trying to merge different package versions across Unity versions is its own special hell.</p>
+<h2 id="what-i-should-have-done">what i should have done</h2>
+<p>looking back should have:</p>
 <ul>
-<li>Stuck with one Unity version from the start</li>
-<li>Made one solid “kitchen sink” project for all experiments</li>
-<li>Set up proper scene organization instead of treating each test as a separate project</li>
-<li>Actually documented which approaches worked best instead of just leaving them in random project folders</li>
+<li>stuck with one Unity version from start</li>
+<li>made one solid project for all experiments</li>
+<li>set up proper scene organization instead of treating each test separately</li>
+<li>documented which approaches worked instead of leaving them scattered</li>
 </ul>
-<h2 id="the-messy-reality">The Messy Reality</h2>
-<p>But honestly? This is probably just how prototyping goes. When you’re trying to figure out if something will work, the last thing you want to do is spend time setting up proper project structure. You want to test the idea, not build a cathedral.</p>
-<p>The real problem is that I didn’t plan for the point where all these experiments would need to come together. I was thinking like each test was the final answer, not a stepping stone.</p>
-<h2 id="moving-forward">Moving Forward</h2>
-<p>Right now I’m doing the unglamorous work of rebuilding the “real” project by cherry-picking the best parts from all these prototypes. It’s tedious, but at least I know what works and what doesn’t.</p>
-<p>And next time? Maybe I’ll actually stick to that “one kitchen sink project” plan. Or maybe I’ll end up with another folder full of experimental projects.</p>
-<p>Honestly, probably the latter. But at least now I know to expect it.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
+<h2 id="messy-reality">messy reality</h2>
+<p>but honestly this is probably just how prototyping goes. when trying to figure out if something works last thing you want is spending time on proper project structure. want to test idea, not build cathedral.</p>
+<p>real problem was not planning for point where experiments need to come together. was thinking each test was final answer, not stepping stone.</p>
+<h2 id="moving-forward">moving forward</h2>
+<p>doing unglamorous work of rebuilding “real” project by cherry-picking best parts from prototypes. tedious but at least know what works and what doesn’t.</p>
+<p>next time maybe stick to “one kitchen sink project” plan. or maybe end up with another folder full of experiments.</p>
+<p>honestly probably the latter. but at least now expect it.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
 Hi, I'm <strong data-astro-cid-2jiluk5e>Frederik</strong>. I'm a devine student based in Belgium.
     You can 
     see some of my work on <a href="https://github.com/FrederikDG" target="_blank" data-astro-cid-2jiluk5e>GitHub</a>,

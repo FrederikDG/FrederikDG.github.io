@@ -31,23 +31,18 @@
       fill="currentColor"
     >
       <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>11 June 2025 ~ 3 min read</p> <h1 data-astro-cid-4sn4zg3r>Shoot to Interact</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="shoot-to-interact">Shoot to Interact</h1>
-<p>Alright, so after I got Unity and the Meta Quest 3 set up and talking to each other, the next logical step was making things… do stuff. I wanted interaction. Movement. Feedback. And honestly, nothing screams “I’m actually doing VR dev now” like spawning a gun and shooting something.</p>
-<h2 id="the-gun-phase-obviously">The Gun Phase (obviously)</h2>
-<p>I kicked it off by trying to get some controller input working, nothing too wild yet. Just the basics. Hold the controller, have something show up in my virtual hand, feel like I’m holding something. So of course, I went with the most cliché (and most fun) first test: a gun.</p>
-<p>Now, getting this to work is not just drag and drop. It’s a <em>lot</em> of headset on, headset off, tweak this script, move that prefab, reposition something that’s floating in the wrong dimension. I was wearing the headset more like a backwards cap than properly on my face. Very flattering.</p>
-<p>I quickly modeled a super simple low-poly pistol, textured it (and by “textured” I mean slapped some color on it), and turned it into a Unity prefab. Dropped it into the scene, lined it up with my right controller, and adjusted the position/rotation/scale until it looked halfway believable. Nothing fancy, but good enough to go pew pew.</p>
-<h2 id="pew-pew-logic">Pew Pew Logic</h2>
-<p>Next up: make it actually shoot. That meant diving into some Unity scripting and wiring up a simple raycast. Pull the trigger, fire a ray from the gun barrel forward. If it hits something, it returns a hit. I also added a basic gunshot sound, which honestly made it feel <em>way</em> more real even without any visuals.</p>
-<p>Later on, I got fancy and added a visible bullet object. Not a physics-driven one yet, just a 3D shape moving forward in space. But it already made the interaction feel more tactile. It’s crazy how much difference a little feedback makes.</p>
-<h2 id="using-my-apartment-as-a-target">Using My Apartment as a Target</h2>
-<p>So the next part got a bit more meta. I wanted to make the environment relevant, not just throw bullets into a grey void. So I looked into using a scan of my apartment as a backdrop. I already had one from using the headset’s room setup tools (you know, the thing that helps you not walk into a wall), and figured: why not use it?</p>
-<p>Turns out, Meta’s passthrough features actually let you bring that scanned mesh into Unity. It’s rough, but it gives you the structure of your real-world space. Using one of their SDK building blocks, I was able to load that scan in as a static mesh and layer it into my passthrough.</p>
-<p>Now, when I fired a bullet, it wouldn’t just vanish, it would hit the walls or floor of my scanned apartment. It didn’t break or react yet (I wasn’t at the physics stage), but just seeing bullets land in familiar spots was kinda surreal.</p>
-<h2 id="sharing-the-base-with-wouter">Sharing the Base with Wouter</h2>
-<p>I brought this whole prototype to Wouter during a consult, mostly to show the concept was working. The idea was simple but key: get a basic interaction loop working inside a real scanned space. Nothing too polished yet, but you could see the gun, hear it shoot, and watch bullets fly into your environment and stick.</p>
-<p>That moment was important, it was the first real “ok, this is a thing now” checkpoint. I had something working, and from here I could start building toward deeper interactions and more realistic environments.</p>
-<p>Still no physics, baby steps.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
+    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>11 June 2025 ~ 2 min read</p> <h1 data-astro-cid-4sn4zg3r>Shoot to Interact</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="first-real-vr-interaction">First Real VR Interaction</h1>
+<p>after unity and quest 3 were talking the next step was making stuff actually do things. wanted interaction, movement, feedback. nothing says “doing VR dev” like making a gun and shooting stuff.</p>
+<h2 id="building-the-gun">building the gun</h2>
+<p>started with basic controller input. hold controller, see something in virtual hand, feel like you’re holding an object. went with the most cliche first test: a gun.</p>
+<p>this isn’t drag and drop though. lots of headset on, headset off, tweak script, move prefab, fix something floating in wrong dimension. wore the headset backwards more than properly.</p>
+<p>modeled simple low-poly pistol, textured it (slapped color on it), turned into unity prefab. dropped in scene, spent forever adjusting position/rotation/scale until it looked believable. nothing fancy but good enough for pew pew.</p>
+<h2 id="shooting-logic">shooting logic</h2>
+<p>next was making it actually shoot. unity scripting time - wired up simple raycast. pull trigger, fire ray from gun barrel forward. if it hits something, register hit. added basic gunshot sound which made it feel way more real even without visuals.</p>
+<p>later added visible bullet object. not physics-driven, just 3D shape moving forward. made interaction feel more tactile. crazy how much difference little feedback makes.</p>
+<h2 id="using-my-apartment-as-target-range">using my apartment as target range</h2>
+<p>wanted environment to be relevant instead of shooting into grey void. looked into using scan of my apartment as backdrop. already had one from headset’s room setup tools.</p>
+<p>turns out meta’s passthrough features let you bring scanned mesh into unity. rough but gives structure of real space. using SDK building blocks could load scan as stat</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
 Hi, I'm <strong data-astro-cid-2jiluk5e>Frederik</strong>. I'm a devine student based in Belgium.
     You can 
     see some of my work on <a href="https://github.com/FrederikDG" target="_blank" data-astro-cid-2jiluk5e>GitHub</a>,

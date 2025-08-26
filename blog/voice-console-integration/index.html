@@ -31,44 +31,25 @@
       fill="currentColor"
     >
       <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>14 June 2025 ~ 2 min read</p> <h1 data-astro-cid-4sn4zg3r>Giving My Voice a Role</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="giving-my-voice-a-role">Giving My Voice a Role</h1>
-<p>After getting basic interactions up and running in my VR project, I wanted to add voice capabilities. Specifically, I aimed to transcribe my speech in real-time and display it within the VR environment. Additionally, I sought a straightforward in-game console to log messages without removing the headset.</p>
-<h2 id="implementing-local-voice-transcription">Implementing Local Voice Transcription</h2>
-<p>To achieve on-device speech-to-text functionality, I integrated OpenAI’s Whisper model into Unity using the <a href="https://github.com/saurabhchalke/whisper-meta-quest" rel="nofollow" target="_blank">whisper.unity</a> package. This setup allows for local transcription on the Meta Quest 3 without relying on internet connectivity.</p>
-<h3 id="setup-steps">Setup Steps:</h3>
+    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>14 June 2025 ~ 2 min read</p> <h1 data-astro-cid-4sn4zg3r>Giving My Voice a Role</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="adding-voice-and-debug-console">Adding Voice and Debug Console</h1>
+<p>after basic interactions were working wanted to add voice capabilities. specifically transcribe speech in real-time and display it in VR. also wanted simple in-game console to see debug messages without removing headset.</p>
+<h2 id="local-voice-transcription">local voice transcription</h2>
+<p>integrated OpenAI’s Whisper model using whisper.unity package for on-device speech-to-text. works locally on quest 3 without internet dependency.</p>
+<h3 id="setup-process">setup process:</h3>
 <ol>
-<li>
-<p><strong>Integrate Whisper.unity</strong>: Added the <code>whisper.unity</code> package to my Unity project via the Package Manager using the Git URL:<br>
-<code>https://github.com/Macoron/whisper.unity.git?path=/Packages/com.whisper.unity</code>.</p>
-</li>
-<li>
-<p><strong>Model Placement</strong>: Downloaded the Whisper tiny model and placed it in the <code>StreamingAssets</code> folder to ensure it’s included in the build.</p>
-</li>
-<li>
-<p><strong>Microphone Input</strong>: Utilized Unity’s <code>Microphone</code> API to capture audio input from the Quest 3’s built-in microphone.</p>
-</li>
-<li>
-<p><strong>Transcription Display</strong>: Created a UI text element anchored at the bottom of the VR interface to display the transcribed text in real-time.</p>
-</li>
+<li>added whisper.unity package via git URL in package manager</li>
+<li>downloaded whisper tiny model, placed in StreamingAssets folder</li>
+<li>used Unity’s Microphone API for audio input from quest’s built-in mic</li>
+<li>created UI text element at bottom of VR interface for real-time display</li>
 </ol>
-<p>This configuration provided a responsive and immersive way to visualize spoken words within the VR environment.</p>
-<h2 id="adding-an-in-game-console-for-logging">Adding an In-Game Console for Logging</h2>
-<p>For debugging purposes, I implemented a basic in-game console to display log messages directly within the VR scene.</p>
-<h3 id="implementation-details">Implementation Details:</h3>
-<ul>
-<li>
-<p><strong>Console UI</strong>: Designed a simple UI panel using Unity’s UI system, positioned it within the VR space for easy visibility.</p>
-</li>
-<li>
-<p><strong>Log Capture</strong>: Subscribed to Unity’s <code>Application.logMessageReceived</code> event to capture log messages and display them in the console panel.</p>
-</li>
-<li>
-<p><strong>Performance Considerations</strong>: Ensured that the console only appears in development builds to avoid performance overhead in production.</p>
-</li>
-</ul>
-<p>This setup allowed me to monitor logs without removing the headset, streamlining the development and debugging process.</p>
-<h2 id="conclusion">Conclusion</h2>
-<p>Integrating local voice transcription and an in-game console enhanced the interactivity and debuggability of my VR project on the Meta Quest 3. Utilizing the <code>whisper.unity</code> package enabled efficient on-device speech recognition, while the in-game console provided immediate feedback during development.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
+<p>responsive setup that made spoken words visible in VR environment.</p>
+<h2 id="in-game-console-for-debugging">in-game console for debugging</h2>
+<p>built basic console to display log messages directly in VR scene.</p>
+<p>simple UI panel using Unity’s UI system, positioned in VR space for visibility. subscribed to Unity’s <code>Application.logMessageReceived</code> event to capture and display log messages in console panel.</p>
+<p>ensured console only appears in development builds to avoid performance overhead in production.</p>
+<h2 id="results">results</h2>
+<p>voice transcription and console enhanced interactivity and debuggability significantly. whisper.unity handled speech recognition efficiently on-device while console provided immediate feedback during development.</p>
+<p>both features streamlined VR development process by reducing need to remove headset for debugging or text input.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
 Hi, I'm <strong data-astro-cid-2jiluk5e>Frederik</strong>. I'm a devine student based in Belgium.
     You can 
     see some of my work on <a href="https://github.com/FrederikDG" target="_blank" data-astro-cid-2jiluk5e>GitHub</a>,

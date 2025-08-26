@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="favicon.png"><!-- Primary Meta Tags --><title>When OVR Takes Over Your Project - Layers, Tags, and Other Surprises</title><meta name="title" content="When OVR Takes Over Your Project - Layers, Tags, and Other Surprises"><meta name="description" content="How Meta's SDK quietly reorganizes your entire Unity project without asking"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-blog-template.netlify.app/blog/ovr-layers-chaos"><meta property="og:title" content="When OVR Takes Over Your Project - Layers, Tags, and Other Surprises"><meta property="og:description" content="How Meta's SDK quietly reorganizes your entire Unity project without asking"><meta property="og:image" content="https://astro-blog-template.netlify.app/assets/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-blog-template.netlify.app/blog/ovr-layers-chaos"><meta property="twitter:title" content="When OVR Takes Over Your Project - Layers, Tags, and Other Surprises"><meta property="twitter:description" content="How Meta's SDK quietly reorganizes your entire Unity project without asking"><meta property="twitter:image" content="https://astro-blog-template.netlify.app/assets/social.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CMTcOisY.js"></script><!-- This is intentionally inlined to avoid FOUC --><script>
+<!DOCTYPE html><html lang="en" data-astro-cid-37fxchfa> <head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width"><link rel="icon" type="image/x-icon" href="favicon.png"><!-- Primary Meta Tags --><title>When OVR Takes Over Your Project</title><meta name="title" content="When OVR Takes Over Your Project"><meta name="description" content="How Meta's SDK quietly reorganizes your Unity project"><!-- Open Graph / Facebook --><meta property="og:type" content="website"><meta property="og:url" content="https://astro-blog-template.netlify.app/blog/ovr-layers-chaos"><meta property="og:title" content="When OVR Takes Over Your Project"><meta property="og:description" content="How Meta's SDK quietly reorganizes your Unity project"><meta property="og:image" content="https://astro-blog-template.netlify.app/assets/social.png"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://astro-blog-template.netlify.app/blog/ovr-layers-chaos"><meta property="twitter:title" content="When OVR Takes Over Your Project"><meta property="twitter:description" content="How Meta's SDK quietly reorganizes your Unity project"><meta property="twitter:image" content="https://astro-blog-template.netlify.app/assets/social.png"><meta name="astro-view-transitions-enabled" content="true"><meta name="astro-view-transitions-fallback" content="animate"><script type="module" src="/_astro/ClientRouter.astro_astro_type_script_index_0_lang.CMTcOisY.js"></script><!-- This is intentionally inlined to avoid FOUC --><script>
   const root = document.documentElement
   const theme = localStorage.getItem('theme')
   if (
@@ -31,22 +31,21 @@
       fill="currentColor"
     >
       <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
-    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>03 August 2025 ~ 4 min read</p> <h1 data-astro-cid-4sn4zg3r>When OVR Takes Over Your Project - Layers, Tags, and Other Surprises</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="when-ovr-takes-over-your-project---layers-tags-and-other-surprises">When OVR Takes Over Your Project - Layers, Tags, and Other Surprises</h1>
-<p>So here’s something nobody warns you about when you import Meta’s XR SDK: it doesn’t just add some prefabs and scripts. It basically moves into your Unity project and starts rearranging the furniture.</p>
-<h2 id="the-great-layer-shuffle">The Great Layer Shuffle</h2>
-<p>I had a perfectly organized layer setup. UI on layer 5, interactive objects on layer 8, environment on layer 10. Simple, clean, worked great.</p>
-<p>Then I imported the Meta XR All-in-One SDK.</p>
-<p>Suddenly I have new layers I didn’t create:</p>
+    </svg><!----> <input type="radio" name="theme-toggle" value="dark" title="Use dark theme" aria-label="Use dark theme"></label><!--]--></div><!--]--><!--astro:end--></astro-island> </div> </nav> </header> <main data-astro-cid-37fxchfa>  <header data-astro-cid-4sn4zg3r> <p data-astro-cid-4sn4zg3r>03 August 2025 ~ 3 min read</p> <h1 data-astro-cid-4sn4zg3r>When OVR Takes Over Your Project</h1> <hr data-astro-cid-4sn4zg3r> </header> <div class="container" data-astro-cid-4sn4zg3r> <article class="content" data-astro-cid-4sn4zg3r> <h1 id="meta-sdk-hostile-takeover">Meta SDK Hostile Takeover</h1>
+<p>nobody warns you about this when importing Meta’s XR SDK: it doesn’t just add prefabs and scripts. basically moves into your Unity project and starts rearranging furniture.</p>
+<h2 id="the-layer-shuffle">the layer shuffle</h2>
+<p>had perfectly organized layer setup. UI on layer 5, interactive objects on layer 8, environment on layer 10. simple, clean, worked.</p>
+<p>then imported Meta XR SDK.</p>
+<p>suddenly have new layers i didn’t create:</p>
 <ul>
 <li>OVROverlay</li>
 <li>OVRUnderlay</li>
 <li>VirtualObjects</li>
 <li>PhysicalObjects</li>
-<li>Whatever else Meta decided I needed</li>
 </ul>
-<p>And my existing objects? Some of them got moved to different layers automatically. My UI elements that were on layer 5 are now on some Meta-specific UI layer. My interactive objects are scattered across three different layers based on whether Meta thinks they’re “physical” or “virtual.”</p>
-<h2 id="tag-invasion">Tag Invasion</h2>
-<p>Same thing happened with tags. I had maybe five custom tags for different object types. After the SDK import, my tag list looks like a Meta developer’s todo list:</p>
+<p>my existing objects? some moved to different layers automatically. UI elements that were layer 5 now on some Meta-specific UI layer. interactive objects scattered across three layers based on whether Meta thinks they’re “physical” or “virtual.”</p>
+<h2 id="tag-invasion">tag invasion</h2>
+<p>same thing with tags. had maybe five custom tags for object types. after SDK import tag list looks like Meta developer’s todo:</p>
 <ul>
 <li>OVRTouchable</li>
 <li>OVRGrabbable</li>
@@ -54,25 +53,22 @@
 <li>OVRSceneAnchor</li>
 <li>OVRPassthroughObject</li>
 </ul>
-<p>And the kicker? Some of my existing objects got retagged automatically. My grabbable cubes that had the tag “Interactive” now have “OVRGrabbable” instead.</p>
-<h2 id="camera-setup-chaos">Camera Setup Chaos</h2>
-<p>This one really got me. I had a simple camera setup for testing - just the main camera with some basic settings. After importing Meta’s SDK and adding their camera rig, my original camera was still there but completely ignored.</p>
-<p>It took me way too long to figure out that the OVRCameraRig creates its own camera hierarchy and expects to be the only camera system in the scene. My original camera wasn’t broken, it just became irrelevant.</p>
-<h2 id="passthrough-vs-everything-else">Passthrough vs Everything Else</h2>
-<p>The most confusing part is how passthrough interacts with the rest of your scene. It’s not just a background - it’s this whole separate rendering layer that has opinions about what should render in front of it and what shouldn’t.</p>
-<p>I had UI elements that worked fine in normal VR suddenly becoming invisible because they were rendering “behind” the passthrough layer. Turns out you need to use OVROverlayCanvas instead of regular Canvas components if you want UI to show up properly in passthrough mode.</p>
-<p>But nobody tells you this upfront. You just start testing and wonder why half your interface disappeared.</p>
-<h2 id="the-physics-surprise">The Physics Surprise</h2>
-<p>Here’s a fun one: Meta’s SDK has strong opinions about physics layers too. Some interactions only work if objects are on specific physics layers. My basic rigidbody objects that worked fine for collision detection suddenly couldn’t be grabbed by Meta’s interaction system because they weren’t on the right layer.</p>
-<p>The documentation mentions this, but it’s buried in some sub-section about advanced configuration. Meanwhile, you’re just trying to make a cube grabbable.</p>
-<h2 id="scene-hierarchy-madness">Scene Hierarchy Madness</h2>
-<p>The OVRCameraRig doesn’t just add a camera - it adds a whole hierarchy of anchors, trackers, and child objects. If you’re not careful about where you parent your objects, you end up with stuff attached to the wrong transform and moving in weird ways.</p>
-<p>I had objects that were supposed to be world-positioned suddenly following my head movement because I accidentally parented them to the CenterEyeAnchor instead of the scene root.</p>
-<h2 id="what-i-learned">What I Learned</h2>
-<p>The big lesson here is that Meta’s SDK isn’t just an addition to your project - it’s a takeover. It wants to be the primary VR system, and it will reorganize things to make that happen.</p>
-<p>This isn’t necessarily bad. Meta’s organization probably makes more sense than my random layer assignments. But it’s surprising when you’re not expecting it.</p>
-<p>Next time I start a VR project, I’m importing the Meta SDK first, then building around their structure instead of trying to retrofit it into my existing setup.</p>
-<p>Or maybe I’ll just accept that every VR project will have that moment where I wonder why nothing works anymore, then remember I need to check which layer everything ended up on.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
+<p>some existing objects got retagged automatically. grabbable cubes with “Interactive” tag now have “OVRGrabbable” instead.</p>
+<h2 id="camera-hierarchy-madness">camera hierarchy madness</h2>
+<p>had simple camera setup for testing - main camera with basic settings. after importing SDK and adding camera rig my original camera was still there but completely ignored.</p>
+<p>took too long to figure out OVRCameraRig creates its own camera hierarchy and expects to be only camera system in scene. original camera wasn’t broken, just became irrelevant.</p>
+<h2 id="passthrough-rendering-confusion">passthrough rendering confusion</h2>
+<p>most confusing part is how passthrough interacts with scene rendering. not just background - separate layer with opinions about what renders in front and what doesn’t.</p>
+<p>had UI elements working fine in normal VR suddenly becoming invisible because rendering “behind” passthrough layer. turns out need OVROverlayCanvas instead of regular Canvas for UI to show in passthrough mode.</p>
+<p>nobody mentions this upfront. you just test and wonder why half interface disappeared.</p>
+<h2 id="physics-layer-opinions">physics layer opinions</h2>
+<p>Meta’s SDK has strong opinions about physics layers too. some interactions only work if objects on specific layers. basic rigidbody objects that worked for collision suddenly couldn’t be grabbed because weren’t on right layer.</p>
+<p>documentation mentions this but buried in sub-section about advanced configuration. meanwhile just trying to make cube grabbable.</p>
+<h2 id="what-i-learned">what i learned</h2>
+<p>Meta’s SDK isn’t addition to your project - it’s takeover. wants to be primary VR system and will reorganize things to make that happen.</p>
+<p>not necessarily bad. Meta’s organization probably makes more sense than my random assignments. but surprising when not expecting it.</p>
+<p>next VR project importing Meta SDK first then building around their structure instead of retrofitting into existing setup.</p>
+<p>or maybe just accept every VR project has that moment where you wonder why nothing works then remember to check which layer everything ended up on.</p> </article> <hr data-astro-cid-4sn4zg3r> <div data-astro-cid-2jiluk5e> <img src="/assets/HEADSHOT.jpg" alt="Headshot of Maxi Ferreira" data-astro-cid-2jiluk5e> <p data-astro-cid-2jiluk5e>
 Hi, I'm <strong data-astro-cid-2jiluk5e>Frederik</strong>. I'm a devine student based in Belgium.
     You can 
     see some of my work on <a href="https://github.com/FrederikDG" target="_blank" data-astro-cid-2jiluk5e>GitHub</a>,
