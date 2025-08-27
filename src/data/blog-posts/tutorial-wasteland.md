@@ -82,3 +82,5 @@ slower but at least not constantly fighting deprecated APIs and missing componen
 ironic thing is VR development itself isn't complicated. getting headset to track movement and display stuff is straightforward. figuring out which current tutorial will work with current setup? that's the real challenge.
 
 maybe by time i finish this project i'll have enough knowledge to make my own up-to-date tutorial. or maybe everything will change again and i'll be just as lost as everyone else.
+
+![Screenshot of VR tutorials out there](Screenshot%202025-08-26%20164520.png)

@@ -25,6 +25,8 @@ started with empty 3D project instead of VR template so i'd understand what's ha
 
 meta released the XR interaction toolkit SDK with basic VR building blocks. after lots of tinkering finally got basic passthrough working. no content yet but camera rig moves when i move my head and i can see stuff in the headset.
 
+
+
 ## lessons learned
 
 VR setup isn't plug-and-play. between version changes, company transitions, and evolving best practices you need to stay adaptable and research thoroughly before diving in.

@@ -25,6 +25,10 @@ that part works great. hands move, fingers bend, looks like you're really there.
 
 then you try grabbing something and realize you've made terrible mistake.
 
+
+![Hand tracking in action](https://mixed-news.com/en/wp-content/uploads/2023/07/Quest-Pro-Multimodal-Hand-Tracking-scaled-1-1200x674.jpg)
+
+*looks smooth in demos, reality is different story*
 ## grab detection hell
 
 with controllers grab is binary. button pressed = grab, not pressed = not grab. with hands system has to guess when you're "trying to grab" based on finger positions and object proximity.

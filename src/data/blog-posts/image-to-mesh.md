@@ -41,3 +41,5 @@ wasn't plug-and-play. original nodes built for Linux so on Windows had to:
 - tweak CUDA paths and recompile components
 
 eventually with enough troubleshooting got first mesh from single VR snapshot. looked decent - not AAA-ready but usable for prototyping in engine.
+
+![Screenshot of Trellis workflow](Screenshot%202025-08-26%20163822.png)
